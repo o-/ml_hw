@@ -65,18 +65,17 @@ class NormalizedInputs:
 
 
 class SG:
-    def __init__(self, xs, ys, ridge=0.0):
-        self.xs = xs
-        self.ys = ys
+    def __init__(self, batch=60, ridge=0.0):
+        self.batch = batch
         self.ridge = ridge
 
-    def get_predictor(self):
+    def get_predictor(self, inputs):
         def prd(x):
-            x = self.xs.normalize(self.xs.model.at(x))
+            x = inputs.normalize(inputs.model.at(x))
             return np.dot(x, self.tt)
         return prd
 
-    def run(self, batch = 60, initial_rate = .005, decay = 0.995, precision=0.01, limit=5000):
+    def run(self, xs, ys, initial_rate = .005, decay = 0.995, precision=0.01, limit=5000):
         def error(res, target):
             return res-target
 
@@ -95,8 +94,8 @@ class SG:
             newtt = np.subtract(tt, step)
             return (newtt, stepsize)
 
-        tt = np.zeros(self.xs.row_len())
-        ttup = np.zeros(self.xs.row_len())
+        tt = np.zeros(xs.row_len())
+        ttup = np.zeros(xs.row_len())
 
         error_rate = []
 
@@ -111,14 +110,14 @@ class SG:
             prev_err_sum = err_sum
             err_sum = 0.0
             epoch += 1
-            for i in range(self.xs.len()):
+            for i in range(xs.len()):
                 steps += 1
-                err_sum += learn(tt, ttup, self.xs[i], self.ys[i], rate)
-                if steps % batch == 0:
+                err_sum += learn(tt, ttup, xs[i], ys[i], rate)
+                if steps % self.batch == 0:
                     tt, stepsize = update(tt, ttup, rate)
-                    ttup = np.zeros(self.xs.row_len())
+                    ttup = np.zeros(xs.row_len())
 
-            error_rate.append(err_sum)
+            error_rate.append(err_sum / xs.len())
             if epoch % 100 == 0:
                 log("      %d\t%d\t%s, err %.02f, stepsize %0.2f" % \
                         (epoch, steps, tt_to_s(tt), err_sum, stepsize))
@@ -128,29 +127,26 @@ class SG:
         return epoch
 
 class ClosedFormSolution:
-    def __init__(self, xs, ys, delta=0.0):
-        self.xs = xs
-        self.ys = ys
-        n = len(xs[0])
+    def __init__(self, n=0, delta=0.0):
         self.ridge = np.zeros((n,n))
         for i in range(n):
             self.ridge[i][i] = delta
 
-    def get_predictor(self):
+    def get_predictor(self, inputs):
         def prd(x):
-            x = self.xs.normalize(self.xs.model.at(x))
+            x = inputs.normalize(inputs.model.at(x))
             return np.dot(x, self.tt)
         return prd
 
-    def run(self):
-        a = self.xs.asNp()
+    def run(self, xs, ys):
+        a = xs.asNp()
         at = a.transpose()
 
         inv = np.linalg.inv(np.add(np.matmul(at, a), self.ridge))
 
         self.tt = np.matmul( \
                 np.matmul(inv, at), \
-            self.ys)
+            ys)
 
 def plot(data, predictors, error_rates):
     fig, axes = plt.subplots(nrows=len(data)+1)
@@ -199,17 +195,19 @@ def getSquaredError(xs, ys, predict):
         err += e*e
     return err/len(xs)
 
+
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-i', help="input matrix filename", required=True)
     parser.add_argument('--cf', help="calculate closed form solution", action='store_true', default=False)
     parser.add_argument('--gd', help="calculate stochastic gradient descent solution", action='store_true', default=False)
-    parser.add_argument('--ridge', help="list of ridge regression lamdas to try", nargs="+", type=float, default=[])
     parser.add_argument('--batch', help="list of batch sizes for gd", nargs="+", type=int, default=[60])
     parser.add_argument('--plot', help="plot results", action='store_true', default=False)
     parser.add_argument('--poly', help="polynom model max n", nargs="+", type=int, required=True)
     parser.add_argument('-v', help="verbose", action='store_true', default=False)
     parser.add_argument('--error', help="evaluate mean square error of the solutions", action='store_true', default=False)
+    parser.add_argument('--ridge', help="list of ridge regression lamdas to try", nargs="+", type=float, default=[])
+    parser.add_argument('--kcross', help="k-cross validations", nargs="+", type=int, default=[])
 
     args = parser.parse_args()
 
@@ -226,6 +224,13 @@ def main():
     train_y = mat['Y_trn']
     txs = [x for [x] in train_x]
     tys = [y for [y] in train_y]
+    train = [txs, tys]
+
+    test_x = mat['X_tst']
+    test_y = mat['Y_tst']
+    vxs = [x for [x] in test_x]
+    vys = [y for [y] in test_y]
+    validation = [vxs, vys]
 
     polys = args.poly
     model = [PolyModel(n) for n in polys]
@@ -248,9 +253,58 @@ def main():
         lambdas = [0.0]
         no_ridge = True
 
-    def print_res(name, tt, tm, batches, iters, err):
-        print ("%s \t tt: %s %s took: %5dms, batchsz: %4d, iters, %5d, err: %.02f" % \
-                (name, tt_to_s(tt), (5-p)*"\t", tm*1000, batches, iters, err))
+    def print_res(name, tt, p, tm, err):
+        print ("%s \t tt: %s %s took: %7.02fms, err: %6.02f" % \
+                (name, tt_to_s(tt), (5-p)*"\t", tm*1000, err))
+
+    def run_experiment(name, poly, algo, train, validation, output=True):
+        inputs = NormalizedInputs(train[0], PolyModel(poly))
+
+        t1 = time.time()
+        algo.run(inputs, train[1])
+        t2 = time.time()
+
+        p = algo.get_predictor(inputs)
+
+        predictors.append([name, p])
+        if hasattr(algo, "error_rate"):
+            error_rates.append(algo.error_rate)
+
+        if len(name) < 10:
+            name += (10-len(name))*" "
+
+        e1 = getSquaredError(train[0], train[1], p)
+        if output:
+            print_res(name, algo.tt, poly, t2-t1, e1)
+
+        e2 = getSquaredError(validation[0], validation[1], p)
+        if args.error and output:
+            print("%s \t mean square err: %.02f (train) and %.02f (test)" % \
+                    (name, e1, e2))
+        return e2
+
+    def k_cross_validate(ks, todo):
+        for k in ks:
+            print ("-----== %d cross validation ==-----------" % (k))
+            k_train_x = []
+            k_train_y = []
+            k_test_x = []
+            k_test_y = []
+
+            for i in range(len(train[0])):
+                if (i+1) % k != 0:
+                    k_train_x.append(train[0][i])
+                    k_train_y.append(train[1][i])
+                else:
+                    k_test_x.append(train[0][i])
+                    k_test_y.append(train[1][i])
+
+            for v in todo:
+                err = run_experiment(v[0], v[1], v[2], [k_train_x, k_train_y], [k_test_x, k_test_y])
+                print ("error : %5.2f" % (err))
+
+
+    todo = []
 
     if run_cf:
         for l in lambdas:
@@ -261,18 +315,12 @@ def main():
                 else:
                     name = "CF_"+str(p)+"p_"+str(l)+"l"
                     log("Computing closed form solution for poly(%d) model and ridge factor %.2f (%s)" % (p, l, name))
-                cf = ClosedFormSolution(inputs[i], tys, l)
-                t1 = time.time()
-                cf.run()
-                t2 = time.time()
-                predictors.append([name, cf.get_predictor()])
-                print ("%s \t\t tt: %s %s took:   %.02fms" % (name, tt_to_s(cf.tt), (5-p)*"\t", (t2-t1)*1000))
-
+                cf = ClosedFormSolution(p+1, l)
+                todo.append([name, p, cf])
 
     if run_gd:
         for l in lambdas:
             for i,p in enumerate(polys):
-                sg = SG(inputs[i], tys, l)
                 for batch in batches:
                     if no_ridge:
                         name = "SG_"+str(batch)+"m_"+str(p)+"p"
@@ -280,29 +328,14 @@ def main():
                     else:
                         name = "SG_"+str(batch)+"m_"+str(p)+"p_"+str(l)+"l"
                         log("Running stochastic gradient with a poly(%d) model, batch size %d and ridge factor %.2f (%s)" % (p, batch, l, name))
-                    t1 = time.time()
-                    iters = sg.run(batch)
-                    t2 = time.time()
-                    predictors.append([name, sg.get_predictor()])
-                    error_rates.append(sg.error_rate)
-                    print_res(name, sg.tt, t2-t1, batch, iters, sg.error_rate[-1])
+                    sg = SG(batch, l)
+                    todo.append([name, p, sg])
 
-
-    test_x = mat['X_tst']
-    test_y = mat['Y_tst']
-    vxs = [x for [x] in test_x]
-    vys = [y for [y] in test_y]
-
-    if (args.error):
-        print("----------== Mean Square Error ==-----------")
-        for p in predictors:
-            e1 = getSquaredError(txs, tys, p[1])
-            e2 = getSquaredError(vxs, vys, p[1])
-            name = p[0]
-            if len(name) < 10:
-                name += (10-len(name))*" "
-            print("%s \t mean squar err: %.02f (train) and %.02f (test)" % \
-                    (name, e1, e2))
+    if len(args.kcross) > 0:
+        k_cross_validate(args.kcross, todo)
+    else:
+        for v in todo:
+            run_experiment(v[0], v[1], v[2], train, validation)
 
     if args.plot:
         plot([["train", txs, tys], ["test", vxs, vys]], predictors, error_rates);
