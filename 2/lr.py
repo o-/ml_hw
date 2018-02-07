@@ -294,12 +294,15 @@ def main():
     vys = [y for [y] in test_y]
 
     if (args.error):
-        if len(predictors) > 0:
-            log("Testing on train and validation DS")
+        print("----------== Mean Square Error ==-----------")
         for p in predictors:
             e1 = getSquaredError(txs, tys, p[1])
             e2 = getSquaredError(vxs, vys, p[1])
-            print("%s \t mean squar err: %.02f (train) and %.02f (test)" % (p[0], e1, e2))
+            name = p[0]
+            if len(name) < 10:
+                name += (10-len(name))*" "
+            print("%s \t mean squar err: %.02f (train) and %.02f (test)" % \
+                    (name, e1, e2))
 
     if args.plot:
         plot([["train", txs, tys], ["test", vxs, vys]], predictors, error_rates);
