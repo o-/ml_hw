@@ -1,0 +1,965 @@
+--== Searching for good ridge regression parameters between -1 and 1 ==--
+
+****** n = 2
+********* k = 2
+* Serching for best ridge factors for closed form solution and n=2 and k=2
+best train      err in CF(x^2, λ=  0.86) with   879.67 train,   908.77 cross val, and  2277.91 validation error
+    θ=[-67.03, 164.97, -23.09]                          
+best cross val. err in CF(x^2, λ=  0.58) with   908.17 train,   882.94 cross val, and  1896.33 validation error
+    θ=[-79.64, 182.63, -14.18]                          
+best validation err in CF(x^2, λ=  0.00) with  1006.87 train,   916.82 cross val, and  1570.84 validation error
+    θ=[-94.41, 202.30, -2.17]                           
+* Searching for best ridge factors for sgd solution and n=2 and k=2
+best train      err in SG(x^2, λ=  0.99, m=60) with   902.08 train,   907.76 cross val, and  2198.14 validation error
+    θ=[-72.15, 169.36, -17.53]                          
+best cross val. err in SG(x^2, λ=  0.69, m=60) with   926.91 train,   889.51 cross val, and  1873.68 validation error
+    θ=[-82.09, 184.43, -11.24]                          
+best validation err in SG(x^2, λ=  0.02, m=60) with  1006.66 train,   916.72 cross val, and  1570.65 validation error
+    θ=[-94.39, 202.29, -2.18]                           
+
+********* k = 10
+* Serching for best ridge factors for closed form solution and n=2 and k=10
+best train      err in CF(x^2, λ= -0.95) with   962.62 train,   906.41 cross val, and  2145.22 validation error
+    θ=[-60.87, 163.82, -29.06]                          
+best cross val. err in CF(x^2, λ= -0.21) with   984.87 train,   868.84 cross val, and  1695.20 validation error
+    θ=[-75.72, 185.54, -18.88]                          
+best validation err in CF(x^2, λ=  0.00) with   987.72 train,   868.99 cross val, and  1671.37 validation error
+    θ=[-76.68, 186.89, -18.14]                          
+* Searching for best ridge factors for sgd solution and n=2 and k=10
+best train      err in SG(x^2, λ=  0.94, m=60) with   956.30 train,   918.52 cross val, and  2225.98 validation error
+    θ=[-60.66, 160.71, -26.82]                          
+best cross val. err in SG(x^2, λ= -0.20, m=60) with   984.55 train,   868.82 cross val, and  1696.69 validation error
+    θ=[-75.78, 185.47, -18.72]                          
+best validation err in SG(x^2, λ=  0.00, m=60) with   987.71 train,   868.99 cross val, and  1671.39 validation error
+    θ=[-76.68, 186.89, -18.14]                          
+
+********* k = 100
+* Serching for best ridge factors for closed form solution and n=2 and k=100
+best train      err in CF(x^2, λ= -1.00) with   628.69 train,   911.60 cross val, and  2287.13 validation error
+    θ=[-61.74, 162.88, -31.75]                          
+best cross val. err in CF(x^2, λ= -0.19) with   984.99 train,   868.29 cross val, and  1760.96 validation error
+    θ=[-77.58, 186.59, -20.78]                          
+best validation err in CF(x^2, λ=  0.00) with  1003.47 train,   868.38 cross val, and  1740.47 validation error
+    θ=[-78.34, 187.68, -20.18]                          
+* Searching for best ridge factors for sgd solution and n=2 and k=100
+best train      err in SG(x^2, λ= -1.00, m=60) with   594.87 train,   939.06 cross val, and  2452.06 validation error
+    θ=[-59.89, 156.87, -30.12]                          
+best cross val. err in SG(x^2, λ=  0.12, m=60) with   993.41 train,   868.31 cross val, and  1749.38 validation error
+    θ=[-77.97, 187.13, -20.40]                          
+best validation err in SG(x^2, λ= -0.01, m=60) with  1002.90 train,   868.38 cross val, and  1739.92 validation error
+    θ=[-78.33, 187.68, -20.18]                          
+
+****** n = 3
+********* k = 2
+* Serching for best ridge factors for closed form solution and n=3 and k=2
+best train      err in CF(x^3, λ= -0.10) with    52.96 train,    45.07 cross val, and   208.28 validation error
+    θ=[-229.71, -6.51, 83.40, 343.49]                   
+best cross val. err in CF(x^3, λ= -0.07) with    53.23 train,    44.68 cross val, and   202.25 validation error
+    θ=[-232.91, -10.75, 85.59, 350.91]                  
+best validation err in CF(x^3, λ=  0.00) with    54.32 train,    45.05 cross val, and   197.46 validation error
+    θ=[-236.13, -15.04, 87.79, 358.40]                  
+* Searching for best ridge factors for sgd solution and n=3 and k=2
+best train      err in SG(x^3, λ= -0.01, m=60) with    60.97 train,    54.48 cross val, and   228.66 validation error
+    θ=[-218.55, 12.28, 76.12, 314.01]                   
+best cross val. err in SG(x^3, λ= -0.01, m=60) with    60.97 train,    54.48 cross val, and   228.66 validation error
+    θ=[-218.55, 12.28, 76.12, 314.01]                   
+best validation err in SG(x^3, λ= -0.01, m=60) with    60.97 train,    54.48 cross val, and   228.66 validation error
+    θ=[-218.55, 12.28, 76.12, 314.01]                   
+
+********* k = 10
+* Serching for best ridge factors for closed form solution and n=3 and k=10
+best train      err in CF(x^3, λ=  0.00) with     4.70 train,    44.29 cross val, and   210.89 validation error
+    θ=[-232.96, -10.91, 86.97, 349.89]                  
+best cross val. err in CF(x^3, λ=  0.00) with     4.70 train,    44.29 cross val, and   210.89 validation error
+    θ=[-232.96, -10.91, 86.97, 349.89]                  
+best validation err in CF(x^3, λ=  0.00) with     4.70 train,    44.29 cross val, and   210.89 validation error
+    θ=[-232.96, -10.91, 86.97, 349.89]                  
+* Searching for best ridge factors for sgd solution and n=3 and k=10
+best train      err in SG(x^3, λ=  0.01, m=60) with     7.03 train,    44.93 cross val, and   216.70 validation error
+    θ=[-229.22, -6.21, 84.31, 341.64]                   
+best cross val. err in SG(x^3, λ=  0.01, m=60) with     7.03 train,    44.93 cross val, and   216.70 validation error
+    θ=[-229.22, -6.21, 84.31, 341.64]                   
+best validation err in SG(x^3, λ=  0.00, m=60) with     7.06 train,    44.94 cross val, and   216.69 validation error
+    θ=[-229.18, -6.16, 84.29, 341.56]                   
+
+********* k = 100
+* Serching for best ridge factors for closed form solution and n=3 and k=100
+best train      err in CF(x^3, λ= -0.14) with     0.00 train,    45.73 cross val, and   227.34 validation error
+    θ=[-237.01, -4.08, 84.39, 347.30]                   
+best cross val. err in CF(x^3, λ= -0.01) with     1.31 train,    44.25 cross val, and   210.65 validation error
+    θ=[-244.50, -11.95, 89.68, 362.53]                  
+best validation err in CF(x^3, λ=  0.00) with     1.33 train,    44.25 cross val, and   210.58 validation error
+    θ=[-244.54, -11.99, 89.71, 362.61]                  
+* Searching for best ridge factors for sgd solution and n=3 and k=100
+best train      err in SG(x^3, λ=  0.08, m=60) with     0.00 train,    45.34 cross val, and   221.90 validation error
+    θ=[-238.32, -4.69, 85.37, 349.29]                   
+best cross val. err in SG(x^3, λ=  0.00, m=60) with     0.27 train,    44.57 cross val, and   215.50 validation error
+    θ=[-241.17, -7.98, 87.36, 355.39]                   
+best validation err in SG(x^3, λ=  0.00, m=60) with     0.27 train,    44.57 cross val, and   215.50 validation error
+    θ=[-241.17, -7.98, 87.36, 355.39]                   
+
+****** n = 5
+********* k = 2
+* Serching for best ridge factors for closed form solution and n=5 and k=2
+best train      err in CF(x^5, λ=  0.00) with    55.97 train,    44.30 cross val, and   196.05 validation error
+    θ=[-251.09,  5.60, 83.89, 276.50, 14.06, 74.50]     
+best cross val. err in CF(x^5, λ=  0.00) with    55.97 train,    44.30 cross val, and   196.05 validation error
+    θ=[-251.09,  5.60, 83.89, 276.50, 14.06, 74.50]     
+best validation err in CF(x^5, λ=  0.00) with    55.97 train,    44.30 cross val, and   196.05 validation error
+    θ=[-251.09,  5.60, 83.89, 276.50, 14.06, 74.50]     
+* Searching for best ridge factors for sgd solution and n=5 and k=2
+best train      err in SG(x^5, λ=  0.25, m=60) with    80.37 train,    65.88 cross val, and   268.90 validation error
+    θ=[-228.14, 54.78, 101.19, 155.23, -28.40, 116.31]  
+best cross val. err in SG(x^5, λ=  0.15, m=60) with    81.32 train,    64.85 cross val, and   245.82 validation error
+    θ=[-231.33, 50.55, 108.82, 163.69, -34.50, 114.62]  
+best validation err in SG(x^5, λ=  0.00, m=60) with    82.93 train,    65.23 cross val, and   233.63 validation error
+    θ=[-232.96, 47.89, 113.79, 169.22, -38.85, 112.92]  
+
+********* k = 10
+* Serching for best ridge factors for closed form solution and n=5 and k=10
+best train      err in CF(x^5, λ=  0.00) with     2.24 train,    42.39 cross val, and   208.43 validation error
+    θ=[-254.92,  1.85, 68.82, 284.54, 37.40, 75.96]     
+best cross val. err in CF(x^5, λ=  0.00) with     2.24 train,    42.39 cross val, and   208.43 validation error
+    θ=[-254.92,  1.85, 68.82, 284.54, 37.40, 75.96]     
+best validation err in CF(x^5, λ=  0.00) with     2.24 train,    42.39 cross val, and   208.43 validation error
+    θ=[-254.92,  1.85, 68.82, 284.54, 37.40, 75.96]     
+* Searching for best ridge factors for sgd solution and n=5 and k=10
+best train      err in SG(x^5, λ= -0.02, m=60) with    10.59 train,    51.66 cross val, and   225.68 validation error
+    θ=[-241.12, 33.15, 94.63, 200.87, -6.38, 107.32]    
+best cross val. err in SG(x^5, λ=  0.01, m=60) with    10.60 train,    51.65 cross val, and   225.52 validation error
+    θ=[-241.15, 33.09, 94.69, 201.03, -6.43, 107.25]    
+best validation err in SG(x^5, λ=  0.00, m=60) with    10.62 train,    51.67 cross val, and   225.49 validation error
+    θ=[-241.15, 33.11, 94.74, 200.97, -6.48, 107.28]    
+
+********* k = 100
+* Serching for best ridge factors for closed form solution and n=5 and k=100
+best train      err in CF(x^5, λ=  0.15) with     0.00 train,    45.21 cross val, and   227.04 validation error
+    θ=[-256.98, 19.54, 79.21, 247.25, 18.52, 94.37]     
+best cross val. err in CF(x^5, λ=  0.00) with     0.30 train,    42.37 cross val, and   208.69 validation error
+    θ=[-268.16,  1.39, 72.40, 294.68, 37.50, 79.22]     
+best validation err in CF(x^5, λ=  0.00) with     0.30 train,    42.37 cross val, and   208.69 validation error
+    θ=[-268.16,  1.39, 72.40, 294.68, 37.50, 79.22]     
+* Searching for best ridge factors for sgd solution and n=5 and k=100
+best train      err in SG(x^5, λ=  0.14, m=60) with     0.00 train,    53.87 cross val, and   245.45 validation error
+    θ=[-247.91, 38.42, 95.49, 197.37, -9.88, 112.06]    
+best cross val. err in SG(x^5, λ= -0.01, m=60) with     0.36 train,    52.01 cross val, and   230.70 validation error
+    θ=[-249.95, 33.56, 99.54, 210.76, -12.45, 105.53]   
+best validation err in SG(x^5, λ= -0.01, m=60) with     0.36 train,    52.01 cross val, and   230.70 validation error
+    θ=[-249.95, 33.56, 99.54, 210.76, -12.45, 105.53]   
+
+
+--== How does the test error change with different n ==--
+      A: n == 3 fits best
+
+SG(x^2, m=60)    θ=[-77.30, 186.68, -20.84]                           took: 2403.28ms (4403)	err: 868.21
+SG(x^2, m=60)    mean square err:   868.21 (train) and  1745.28 (test)
+SG(x^3, m=60)    θ=[-241.15, -7.92, 87.33, 355.26]                    took: 2192.02ms (3602)	err:  44.58
+SG(x^3, m=60)    mean square err:    44.58 (train) and   216.12 (test)
+SG(x^5, m=60)    θ=[-249.82, 33.61, 99.68, 210.81, -12.73, 105.25]    took: 3269.08ms (4466)	err:  52.05
+SG(x^5, m=60)    mean square err:    52.05 (train) and   231.17 (test)
+
+--== How does the test error change with λ ==--
+    A: there seems to be a globally optimal value
+
+****** n = 3
+SG(x^3, λ= -1.00, m=60) θ=[-124.80, 92.13,  7.33, 134.18]                    took: 3515.32ms (4713)	err: 404.92
+SG(x^3, λ= -1.00, m=60) mean square err:   404.92 (train) and  1297.56 (test)
+SG(x^3, λ= -0.99, m=60) θ=[-125.53, 91.95,  7.81, 135.27]                    took: 3273.54ms (5000)	err: 400.51
+SG(x^3, λ= -0.99, m=60) mean square err:   400.51 (train) and  1280.93 (test)
+SG(x^3, λ= -0.98, m=60) θ=[-126.30, 91.74,  8.29, 136.36]                    took: 3278.17ms (4703)	err: 396.21
+SG(x^3, λ= -0.98, m=60) mean square err:   396.21 (train) and  1267.42 (test)
+SG(x^3, λ= -0.97, m=60) θ=[-127.06, 91.53,  8.78, 137.49]                    took: 2903.86ms (4421)	err: 391.81
+SG(x^3, λ= -0.97, m=60) mean square err:   391.81 (train) and  1251.84 (test)
+SG(x^3, λ= -0.96, m=60) θ=[-127.83, 91.30,  9.28, 138.63]                    took: 2917.93ms (4277)	err: 387.39
+SG(x^3, λ= -0.96, m=60) mean square err:   387.39 (train) and  1236.06 (test)
+SG(x^3, λ= -0.95, m=60) θ=[-128.61, 91.06,  9.78, 139.79]                    took: 3200.82ms (5000)	err: 383.03
+SG(x^3, λ= -0.95, m=60) mean square err:   383.03 (train) and  1221.76 (test)
+SG(x^3, λ= -0.94, m=60) θ=[-129.40, 90.80, 10.30, 140.98]                    took: 3727.90ms (4896)	err: 378.60
+SG(x^3, λ= -0.94, m=60) mean square err:   378.60 (train) and  1206.16 (test)
+SG(x^3, λ= -0.93, m=60) θ=[-130.20, 90.53, 10.82, 142.19]                    took: 2945.33ms (4131)	err: 374.17
+SG(x^3, λ= -0.93, m=60) mean square err:   374.17 (train) and  1191.08 (test)
+SG(x^3, λ= -0.92, m=60) θ=[-131.01, 90.25, 11.35, 143.42]                    took: 3192.06ms (4952)	err: 369.72
+SG(x^3, λ= -0.92, m=60) mean square err:   369.72 (train) and  1175.63 (test)
+SG(x^3, λ= -0.91, m=60) θ=[-131.83, 89.95, 11.89, 144.68]                    took: 2894.46ms (4600)	err: 365.24
+SG(x^3, λ= -0.91, m=60) mean square err:   365.24 (train) and  1160.61 (test)
+SG(x^3, λ= -0.90, m=60) θ=[-132.66, 89.64, 12.43, 145.96]                    took: 2953.59ms (4526)	err: 360.77
+SG(x^3, λ= -0.90, m=60) mean square err:   360.77 (train) and  1145.56 (test)
+SG(x^3, λ= -0.89, m=60) θ=[-133.50, 89.31, 12.99, 147.26]                    took: 2677.43ms (4230)	err: 356.26
+SG(x^3, λ= -0.89, m=60) mean square err:   356.26 (train) and  1130.46 (test)
+SG(x^3, λ= -0.88, m=60) θ=[-134.35, 88.96, 13.55, 148.59]                    took: 2937.18ms (4568)	err: 351.73
+SG(x^3, λ= -0.88, m=60) mean square err:   351.73 (train) and  1115.05 (test)
+SG(x^3, λ= -0.87, m=60) θ=[-135.22, 88.60, 14.12, 149.95]                    took: 3110.95ms (4886)	err: 347.19
+SG(x^3, λ= -0.87, m=60) mean square err:   347.19 (train) and  1100.22 (test)
+SG(x^3, λ= -0.86, m=60) θ=[-136.09, 88.21, 14.70, 151.33]                    took: 3062.47ms (4680)	err: 342.64
+SG(x^3, λ= -0.86, m=60) mean square err:   342.64 (train) and  1085.15 (test)
+SG(x^3, λ= -0.85, m=60) θ=[-136.98, 87.82, 15.29, 152.74]                    took: 2844.60ms (4500)	err: 338.05
+SG(x^3, λ= -0.85, m=60) mean square err:   338.05 (train) and  1069.95 (test)
+SG(x^3, λ= -0.84, m=60) θ=[-137.88, 87.40, 15.89, 154.18]                    took: 2923.52ms (4486)	err: 333.45
+SG(x^3, λ= -0.84, m=60) mean square err:   333.45 (train) and  1054.96 (test)
+SG(x^3, λ= -0.83, m=60) θ=[-138.80, 86.95, 16.49, 155.64]                    took: 2706.40ms (4001)	err: 328.86
+SG(x^3, λ= -0.83, m=60) mean square err:   328.86 (train) and  1041.21 (test)
+SG(x^3, λ= -0.82, m=60) θ=[-139.70, 86.51, 17.13, 157.15]                    took: 3297.13ms (5000)	err: 324.15
+SG(x^3, λ= -0.82, m=60) mean square err:   324.15 (train) and  1024.12 (test)
+SG(x^3, λ= -0.81, m=60) θ=[-140.64, 86.03, 17.75, 158.67]                    took: 3013.11ms (4710)	err: 319.49
+SG(x^3, λ= -0.81, m=60) mean square err:   319.49 (train) and  1009.76 (test)
+SG(x^3, λ= -0.80, m=60) θ=[-141.59, 85.53, 18.39, 160.24]                    took: 2757.41ms (4144)	err: 314.80
+SG(x^3, λ= -0.80, m=60) mean square err:   314.80 (train) and   994.97 (test)
+SG(x^3, λ= -0.79, m=60) θ=[-142.56, 85.02, 19.04, 161.83]                    took: 2671.77ms (4144)	err: 310.07
+SG(x^3, λ= -0.79, m=60) mean square err:   310.07 (train) and   979.88 (test)
+SG(x^3, λ= -0.78, m=60) θ=[-143.53, 84.48, 19.70, 163.45]                    took: 2488.98ms (3751)	err: 305.31
+SG(x^3, λ= -0.78, m=60) mean square err:   305.31 (train) and   964.80 (test)
+SG(x^3, λ= -0.77, m=60) θ=[-144.52, 83.93, 20.37, 165.11]                    took: 2864.07ms (4271)	err: 300.53
+SG(x^3, λ= -0.77, m=60) mean square err:   300.53 (train) and   949.56 (test)
+SG(x^3, λ= -0.76, m=60) θ=[-145.52, 83.34, 21.05, 166.80]                    took: 3344.74ms (4748)	err: 295.75
+SG(x^3, λ= -0.76, m=60) mean square err:   295.75 (train) and   934.73 (test)
+SG(x^3, λ= -0.75, m=60) θ=[-146.54, 82.74, 21.74, 168.52]                    took: 2893.81ms (4413)	err: 290.93
+SG(x^3, λ= -0.75, m=60) mean square err:   290.93 (train) and   920.06 (test)
+SG(x^3, λ= -0.74, m=60) θ=[-147.57, 82.11, 22.45, 170.29]                    took: 2957.26ms (4318)	err: 286.06
+SG(x^3, λ= -0.74, m=60) mean square err:   286.06 (train) and   905.04 (test)
+SG(x^3, λ= -0.73, m=60) θ=[-148.62, 81.46, 23.16, 172.09]                    took: 3363.34ms (5000)	err: 281.20
+SG(x^3, λ= -0.73, m=60) mean square err:   281.20 (train) and   890.46 (test)
+SG(x^3, λ= -0.72, m=60) θ=[-149.68, 80.78, 23.89, 173.93]                    took: 2911.24ms (4086)	err: 276.28
+SG(x^3, λ= -0.72, m=60) mean square err:   276.28 (train) and   875.30 (test)
+SG(x^3, λ= -0.71, m=60) θ=[-150.76, 80.08, 24.63, 175.80]                    took: 2670.14ms (4087)	err: 271.35
+SG(x^3, λ= -0.71, m=60) mean square err:   271.35 (train) and   860.44 (test)
+SG(x^3, λ= -0.70, m=60) θ=[-151.86, 79.36, 25.38, 177.71]                    took: 3109.96ms (4734)	err: 266.41
+SG(x^3, λ= -0.70, m=60) mean square err:   266.41 (train) and   845.66 (test)
+SG(x^3, λ= -0.69, m=60) θ=[-152.97, 78.61, 26.14, 179.67]                    took: 3069.22ms (4582)	err: 261.43
+SG(x^3, λ= -0.69, m=60) mean square err:   261.43 (train) and   830.85 (test)
+SG(x^3, λ= -0.68, m=60) θ=[-154.10, 77.83, 26.92, 181.67]                    took: 2972.39ms (4171)	err: 256.42
+SG(x^3, λ= -0.68, m=60) mean square err:   256.42 (train) and   816.02 (test)
+SG(x^3, λ= -0.67, m=60) θ=[-155.24, 77.02, 27.70, 183.70]                    took: 3611.38ms (4546)	err: 251.40
+SG(x^3, λ= -0.67, m=60) mean square err:   251.40 (train) and   801.36 (test)
+SG(x^3, λ= -0.66, m=60) θ=[-156.41, 76.19, 28.51, 185.78]                    took: 2977.54ms (4585)	err: 246.34
+SG(x^3, λ= -0.66, m=60) mean square err:   246.34 (train) and   786.50 (test)
+SG(x^3, λ= -0.65, m=60) θ=[-157.58, 75.33, 29.32, 187.91]                    took: 2988.85ms (4658)	err: 241.25
+SG(x^3, λ= -0.65, m=60) mean square err:   241.25 (train) and   771.24 (test)
+SG(x^3, λ= -0.64, m=60) θ=[-158.79, 74.44, 30.15, 190.07]                    took: 2995.54ms (4437)	err: 236.18
+SG(x^3, λ= -0.64, m=60) mean square err:   236.18 (train) and   757.25 (test)
+SG(x^3, λ= -0.63, m=60) θ=[-160.00, 73.52, 30.99, 192.28]                    took: 2535.46ms (3922)	err: 231.07
+SG(x^3, λ= -0.63, m=60) mean square err:   231.07 (train) and   742.60 (test)
+SG(x^3, λ= -0.62, m=60) θ=[-161.23, 72.57, 31.84, 194.54]                    took: 3100.94ms (4721)	err: 225.94
+SG(x^3, λ= -0.62, m=60) mean square err:   225.94 (train) and   727.77 (test)
+SG(x^3, λ= -0.61, m=60) θ=[-162.49, 71.59, 32.71, 196.83]                    took: 2895.54ms (4499)	err: 220.82
+SG(x^3, λ= -0.61, m=60) mean square err:   220.82 (train) and   713.88 (test)
+SG(x^3, λ= -0.60, m=60) θ=[-163.77, 70.59, 33.59, 199.19]                    took: 2828.60ms (4401)	err: 215.65
+SG(x^3, λ= -0.60, m=60) mean square err:   215.65 (train) and   699.15 (test)
+SG(x^3, λ= -0.59, m=60) θ=[-165.06, 69.55, 34.48, 201.58]                    took: 3075.84ms (4807)	err: 210.49
+SG(x^3, λ= -0.59, m=60) mean square err:   210.49 (train) and   684.66 (test)
+SG(x^3, λ= -0.58, m=60) θ=[-166.37, 68.48, 35.39, 204.03]                    took: 2492.28ms (3778)	err: 205.31
+SG(x^3, λ= -0.58, m=60) mean square err:   205.31 (train) and   670.00 (test)
+SG(x^3, λ= -0.57, m=60) θ=[-167.71, 67.37, 36.31, 206.51]                    took: 2990.22ms (4388)	err: 200.16
+SG(x^3, λ= -0.57, m=60) mean square err:   200.16 (train) and   656.71 (test)
+SG(x^3, λ= -0.56, m=60) θ=[-169.05, 66.25, 37.25, 209.06]                    took: 2745.49ms (4174)	err: 194.96
+SG(x^3, λ= -0.56, m=60) mean square err:   194.96 (train) and   641.59 (test)
+SG(x^3, λ= -0.55, m=60) θ=[-170.42, 65.08, 38.20, 211.65]                    took: 3117.49ms (4820)	err: 189.79
+SG(x^3, λ= -0.55, m=60) mean square err:   189.79 (train) and   627.47 (test)
+SG(x^3, λ= -0.54, m=60) θ=[-171.81, 63.88, 39.17, 214.29]                    took: 2628.81ms (3978)	err: 184.62
+SG(x^3, λ= -0.54, m=60) mean square err:   184.62 (train) and   613.36 (test)
+SG(x^3, λ= -0.53, m=60) θ=[-173.22, 62.66, 40.14, 216.97]                    took: 2526.37ms (3925)	err: 179.48
+SG(x^3, λ= -0.53, m=60) mean square err:   179.48 (train) and   599.60 (test)
+SG(x^3, λ= -0.52, m=60) θ=[-174.65, 61.39, 41.14, 219.71]                    took: 2563.20ms (3867)	err: 174.34
+SG(x^3, λ= -0.52, m=60) mean square err:   174.34 (train) and   585.81 (test)
+SG(x^3, λ= -0.51, m=60) θ=[-176.10, 60.10, 42.14, 222.50]                    took: 3116.57ms (4597)	err: 169.21
+SG(x^3, λ= -0.51, m=60) mean square err:   169.21 (train) and   572.05 (test)
+SG(x^3, λ= -0.50, m=60) θ=[-177.56, 58.77, 43.16, 225.32]                    took: 3254.08ms (4934)	err: 164.13
+SG(x^3, λ= -0.50, m=60) mean square err:   164.13 (train) and   558.51 (test)
+SG(x^3, λ= -0.49, m=60) θ=[-179.05, 57.41, 44.19, 228.20]                    took: 2921.87ms (4548)	err: 159.07
+SG(x^3, λ= -0.49, m=60) mean square err:   159.07 (train) and   544.97 (test)
+SG(x^3, λ= -0.48, m=60) θ=[-180.55, 56.03, 45.24, 231.13]                    took: 2925.86ms (4367)	err: 154.04
+SG(x^3, λ= -0.48, m=60) mean square err:   154.04 (train) and   531.64 (test)
+SG(x^3, λ= -0.47, m=60) θ=[-182.08, 54.60, 46.30, 234.11]                    took: 2960.61ms (4384)	err: 149.05
+SG(x^3, λ= -0.47, m=60) mean square err:   149.05 (train) and   518.40 (test)
+SG(x^3, λ= -0.46, m=60) θ=[-183.61, 53.16, 47.37, 237.12]                    took: 2618.20ms (3886)	err: 144.13
+SG(x^3, λ= -0.46, m=60) mean square err:   144.13 (train) and   505.40 (test)
+SG(x^3, λ= -0.45, m=60) θ=[-185.17, 51.67, 48.45, 240.19]                    took: 2666.68ms (4038)	err: 139.25
+SG(x^3, λ= -0.45, m=60) mean square err:   139.25 (train) and   492.46 (test)
+SG(x^3, λ= -0.44, m=60) θ=[-186.75, 50.16, 49.55, 243.29]                    took: 2757.25ms (4120)	err: 134.44
+SG(x^3, λ= -0.44, m=60) mean square err:   134.44 (train) and   479.89 (test)
+SG(x^3, λ= -0.43, m=60) θ=[-188.34, 48.61, 50.65, 246.45]                    took: 2996.56ms (4476)	err: 129.67
+SG(x^3, λ= -0.43, m=60) mean square err:   129.67 (train) and   467.36 (test)
+SG(x^3, λ= -0.42, m=60) θ=[-189.93, 47.06, 51.76, 249.61]                    took: 2639.89ms (3618)	err: 125.04
+SG(x^3, λ= -0.42, m=60) mean square err:   125.04 (train) and   455.09 (test)
+SG(x^3, λ= -0.41, m=60) θ=[-191.55, 45.47, 52.89, 252.84]                    took: 2523.90ms (3747)	err: 120.45
+SG(x^3, λ= -0.41, m=60) mean square err:   120.45 (train) and   443.01 (test)
+SG(x^3, λ= -0.40, m=60) θ=[-193.19, 43.83, 54.03, 256.14]                    took: 2982.14ms (4545)	err: 115.91
+SG(x^3, λ= -0.40, m=60) mean square err:   115.91 (train) and   431.10 (test)
+SG(x^3, λ= -0.39, m=60) θ=[-194.83, 42.19, 55.17, 259.42]                    took: 2859.00ms (4252)	err: 111.52
+SG(x^3, λ= -0.39, m=60) mean square err:   111.52 (train) and   419.53 (test)
+SG(x^3, λ= -0.38, m=60) θ=[-196.48, 40.52, 56.32, 262.74]                    took: 2779.28ms (4283)	err: 107.23
+SG(x^3, λ= -0.38, m=60) mean square err:   107.23 (train) and   408.09 (test)
+SG(x^3, λ= -0.37, m=60) θ=[-198.14, 38.84, 57.47, 266.09]                    took: 2866.55ms (4252)	err: 103.05
+SG(x^3, λ= -0.37, m=60) mean square err:   103.05 (train) and   397.10 (test)
+SG(x^3, λ= -0.36, m=60) θ=[-199.81, 37.13, 58.63, 269.46]                    took: 2848.27ms (4198)	err:  98.98
+SG(x^3, λ= -0.36, m=60) mean square err:    98.98 (train) and   386.34 (test)
+SG(x^3, λ= -0.35, m=60) θ=[-201.49, 35.40, 59.80, 272.87]                    took: 2997.34ms (4473)	err:  95.03
+SG(x^3, λ= -0.35, m=60) mean square err:    95.03 (train) and   375.73 (test)
+SG(x^3, λ= -0.34, m=60) θ=[-203.16, 33.67, 60.97, 276.28]                    took: 3171.15ms (4630)	err:  91.22
+SG(x^3, λ= -0.34, m=60) mean square err:    91.22 (train) and   365.52 (test)
+SG(x^3, λ= -0.33, m=60) θ=[-204.82, 31.93, 62.12, 279.67]                    took: 2810.71ms (4105)	err:  87.59
+SG(x^3, λ= -0.33, m=60) mean square err:    87.59 (train) and   355.67 (test)
+SG(x^3, λ= -0.32, m=60) θ=[-206.50, 30.17, 63.29, 283.09]                    took: 2927.01ms (4225)	err:  84.06
+SG(x^3, λ= -0.32, m=60) mean square err:    84.06 (train) and   346.17 (test)
+SG(x^3, λ= -0.31, m=60) θ=[-208.16, 28.43, 64.44, 286.48]                    took: 2666.78ms (3931)	err:  80.73
+SG(x^3, λ= -0.31, m=60) mean square err:    80.73 (train) and   336.97 (test)
+SG(x^3, λ= -0.30, m=60) θ=[-209.82, 26.67, 65.60, 289.91]                    took: 2708.93ms (4043)	err:  77.50
+SG(x^3, λ= -0.30, m=60) mean square err:    77.50 (train) and   327.54 (test)
+SG(x^3, λ= -0.29, m=60) θ=[-211.46, 24.92, 66.73, 293.26]                    took: 2424.32ms (3762)	err:  74.49
+SG(x^3, λ= -0.29, m=60) mean square err:    74.49 (train) and   319.67 (test)
+SG(x^3, λ= -0.28, m=60) θ=[-213.13, 23.13, 67.90, 296.71]                    took: 2755.54ms (4094)	err:  71.55
+SG(x^3, λ= -0.28, m=60) mean square err:    71.55 (train) and   311.26 (test)
+SG(x^3, λ= -0.27, m=60) θ=[-214.54, 21.64, 68.86, 299.58]                    took: 1803.62ms (2782)	err:  69.21
+SG(x^3, λ= -0.27, m=60) mean square err:    69.21 (train) and   304.78 (test)
+SG(x^3, λ= -0.26, m=60) θ=[-216.30, 19.72, 70.11, 303.28]                    took: 2351.13ms (3539)	err:  66.36
+SG(x^3, λ= -0.26, m=60) mean square err:    66.36 (train) and   295.85 (test)
+SG(x^3, λ= -0.25, m=60) θ=[-217.87, 18.02, 71.19, 306.49]                    took: 2225.09ms (3401)	err:  64.02
+SG(x^3, λ= -0.25, m=60) mean square err:    64.02 (train) and   289.55 (test)
+SG(x^3, λ= -0.24, m=60) θ=[-219.53, 16.21, 72.34, 309.95]                    took: 2710.03ms (4118)	err:  61.64
+SG(x^3, λ= -0.24, m=60) mean square err:    61.64 (train) and   282.15 (test)
+SG(x^3, λ= -0.23, m=60) θ=[-221.08, 14.51, 73.42, 313.18]                    took: 2899.69ms (4325)	err:  59.57
+SG(x^3, λ= -0.23, m=60) mean square err:    59.57 (train) and   275.80 (test)
+SG(x^3, λ= -0.22, m=60) θ=[-222.56, 12.90, 74.44, 316.25]                    took: 2723.45ms (3967)	err:  57.72
+SG(x^3, λ= -0.22, m=60) mean square err:    57.72 (train) and   270.01 (test)
+SG(x^3, λ= -0.21, m=60) θ=[-224.04, 11.26, 75.47, 319.35]                    took: 3359.59ms (4067)	err:  55.97
+SG(x^3, λ= -0.21, m=60) mean square err:    55.97 (train) and   264.29 (test)
+SG(x^3, λ= -0.20, m=60) θ=[-225.44,  9.71, 76.45, 322.27]                    took: 2991.52ms (3846)	err:  54.43
+SG(x^3, λ= -0.20, m=60) mean square err:    54.43 (train) and   259.23 (test)
+SG(x^3, λ= -0.19, m=60) θ=[-226.85,  8.15, 77.42, 325.21]                    took: 3060.68ms (3919)	err:  53.00
+SG(x^3, λ= -0.19, m=60) mean square err:    53.00 (train) and   254.35 (test)
+SG(x^3, λ= -0.18, m=60) θ=[-228.09,  6.79, 78.28, 327.80]                    took: 2347.66ms (3401)	err:  51.82
+SG(x^3, λ= -0.18, m=60) mean square err:    51.82 (train) and   249.85 (test)
+SG(x^3, λ= -0.17, m=60) θ=[-229.50,  5.21, 79.26, 330.76]                    took: 2590.43ms (3919)	err:  50.58
+SG(x^3, λ= -0.17, m=60) mean square err:    50.58 (train) and   245.59 (test)
+SG(x^3, λ= -0.16, m=60) θ=[-230.63,  3.95, 80.04, 333.12]                    took: 2189.33ms (3404)	err:  49.68
+SG(x^3, λ= -0.16, m=60) mean square err:    49.68 (train) and   242.11 (test)
+SG(x^3, λ= -0.15, m=60) θ=[-231.96,  2.46, 80.96, 335.91]                    took: 2593.06ms (3995)	err:  48.69
+SG(x^3, λ= -0.15, m=60) mean square err:    48.69 (train) and   238.33 (test)
+SG(x^3, λ= -0.14, m=60) θ=[-232.93,  1.39, 81.63, 337.95]                    took: 2271.71ms (3347)	err:  48.04
+SG(x^3, λ= -0.14, m=60) mean square err:    48.04 (train) and   235.41 (test)
+SG(x^3, λ= -0.13, m=60) θ=[-234.14,  0.01, 82.48, 340.50]                    took: 2554.21ms (3896)	err:  47.29
+SG(x^3, λ= -0.13, m=60) mean square err:    47.29 (train) and   232.03 (test)
+SG(x^3, λ= -0.12, m=60) θ=[-234.78, -0.69, 82.92, 341.83]                    took: 1945.03ms (2914)	err:  46.93
+SG(x^3, λ= -0.12, m=60) mean square err:    46.93 (train) and   230.46 (test)
+SG(x^3, λ= -0.11, m=60) θ=[-235.97, -2.04, 83.75, 344.35]                    took: 2443.95ms (3469)	err:  46.32
+SG(x^3, λ= -0.11, m=60) mean square err:    46.32 (train) and   227.26 (test)
+SG(x^3, λ= -0.10, m=60) θ=[-236.94, -3.15, 84.43, 346.42]                    took: 2508.56ms (3857)	err:  45.87
+SG(x^3, λ= -0.10, m=60) mean square err:    45.87 (train) and   224.89 (test)
+SG(x^3, λ= -0.09, m=60) θ=[-237.67, -3.97, 84.92, 347.93]                    took: 2322.24ms (3571)	err:  45.58
+SG(x^3, λ= -0.09, m=60) mean square err:    45.58 (train) and   223.26 (test)
+SG(x^3, λ= -0.08, m=60) θ=[-238.44, -4.85, 85.46, 349.57]                    took: 2541.32ms (3794)	err:  45.30
+SG(x^3, λ= -0.08, m=60) mean square err:    45.30 (train) and   221.45 (test)
+SG(x^3, λ= -0.07, m=60) θ=[-238.98, -5.45, 85.84, 350.70]                    took: 2397.14ms (3474)	err:  45.12
+SG(x^3, λ= -0.07, m=60) mean square err:    45.12 (train) and   220.27 (test)
+SG(x^3, λ= -0.06, m=60) θ=[-239.47, -5.99, 86.16, 351.73]                    took: 2161.26ms (3308)	err:  44.98
+SG(x^3, λ= -0.06, m=60) mean square err:    44.98 (train) and   219.12 (test)
+SG(x^3, λ= -0.05, m=60) θ=[-239.98, -6.59, 86.53, 352.82]                    took: 2234.05ms (3427)	err:  44.84
+SG(x^3, λ= -0.05, m=60) mean square err:    44.84 (train) and   218.12 (test)
+SG(x^3, λ= -0.04, m=60) θ=[-240.62, -7.33, 86.98, 354.18]                    took: 3331.42ms (4362)	err:  44.68
+SG(x^3, λ= -0.04, m=60) mean square err:    44.68 (train) and   216.86 (test)
+SG(x^3, λ= -0.03, m=60) θ=[-240.60, -7.29, 86.96, 354.11]                    took: 2094.17ms (3255)	err:  44.69
+SG(x^3, λ= -0.03, m=60) mean square err:    44.69 (train) and   216.88 (test)
+SG(x^3, λ= -0.02, m=60) θ=[-240.91, -7.64, 87.17, 354.77]                    took: 2214.81ms (3433)	err:  44.62
+SG(x^3, λ= -0.02, m=60) mean square err:    44.62 (train) and   216.32 (test)
+SG(x^3, λ= -0.01, m=60) θ=[-241.18, -7.96, 87.37, 355.36]                    took: 2512.77ms (3880)	err:  44.57
+SG(x^3, λ= -0.01, m=60) mean square err:    44.57 (train) and   215.69 (test)
+SG(x^3, λ=  0.00, m=60) θ=[-241.12, -7.88, 87.32, 355.22]                    took: 2326.88ms (3544)	err:  44.58
+SG(x^3, λ=  0.00, m=60) mean square err:    44.58 (train) and   215.84 (test)
+SG(x^3, λ=  0.01, m=60) θ=[-241.20, -7.98, 87.38, 355.40]                    took: 2576.71ms (3957)	err:  44.57
+SG(x^3, λ=  0.01, m=60) mean square err:    44.57 (train) and   215.67 (test)
+SG(x^3, λ=  0.02, m=60) θ=[-240.82, -7.54, 87.11, 354.59]                    took: 2109.88ms (3256)	err:  44.64
+SG(x^3, λ=  0.02, m=60) mean square err:    44.64 (train) and   216.28 (test)
+SG(x^3, λ=  0.03, m=60) θ=[-240.84, -7.57, 87.13, 354.63]                    took: 2556.09ms (3898)	err:  44.64
+SG(x^3, λ=  0.03, m=60) mean square err:    44.64 (train) and   216.39 (test)
+SG(x^3, λ=  0.04, m=60) θ=[-240.46, -7.14, 86.87, 353.86]                    took: 2387.89ms (3689)	err:  44.72
+SG(x^3, λ=  0.04, m=60) mean square err:    44.72 (train) and   216.80 (test)
+SG(x^3, λ=  0.05, m=60) θ=[-240.12, -6.76, 86.63, 353.12]                    took: 2497.61ms (3822)	err:  44.80
+SG(x^3, λ=  0.05, m=60) mean square err:    44.80 (train) and   217.86 (test)
+SG(x^3, λ=  0.06, m=60) θ=[-239.54, -6.09, 86.22, 351.89]                    took: 2286.47ms (3486)	err:  44.96
+SG(x^3, λ=  0.06, m=60) mean square err:    44.96 (train) and   219.02 (test)
+SG(x^3, λ=  0.07, m=60) θ=[-238.65, -5.06, 85.60, 349.99]                    took: 1928.07ms (2875)	err:  45.23
+SG(x^3, λ=  0.07, m=60) mean square err:    45.23 (train) and   220.87 (test)
+SG(x^3, λ=  0.08, m=60) θ=[-238.28, -4.66, 85.35, 349.24]                    took: 2327.18ms (3338)	err:  45.35
+SG(x^3, λ=  0.08, m=60) mean square err:    45.35 (train) and   221.46 (test)
+SG(x^3, λ=  0.09, m=60) θ=[-237.41, -3.67, 84.75, 347.39]                    took: 2133.76ms (3022)	err:  45.68
+SG(x^3, λ=  0.09, m=60) mean square err:    45.68 (train) and   223.76 (test)
+SG(x^3, λ=  0.10, m=60) θ=[-236.90, -3.10, 84.39, 346.31]                    took: 2494.32ms (3664)	err:  45.89
+SG(x^3, λ=  0.10, m=60) mean square err:    45.89 (train) and   225.05 (test)
+SG(x^3, λ=  0.11, m=60) θ=[-236.02, -2.11, 83.79, 344.47]                    took: 2373.94ms (3637)	err:  46.29
+SG(x^3, λ=  0.11, m=60) mean square err:    46.29 (train) and   227.13 (test)
+SG(x^3, λ=  0.12, m=60) θ=[-235.09, -1.06, 83.15, 342.50]                    took: 2668.75ms (3650)	err:  46.76
+SG(x^3, λ=  0.12, m=60) mean square err:    46.76 (train) and   229.44 (test)
+SG(x^3, λ=  0.13, m=60) θ=[-234.01,  0.16, 82.39, 340.22]                    took: 2236.22ms (3402)	err:  47.37
+SG(x^3, λ=  0.13, m=60) mean square err:    47.37 (train) and   232.34 (test)
+SG(x^3, λ=  0.14, m=60) θ=[-232.86,  1.45, 81.59, 337.81]                    took: 2106.72ms (3189)	err:  48.08
+SG(x^3, λ=  0.14, m=60) mean square err:    48.08 (train) and   235.54 (test)
+SG(x^3, λ=  0.15, m=60) θ=[-231.93,  2.49, 80.95, 335.85]                    took: 2515.32ms (3831)	err:  48.71
+SG(x^3, λ=  0.15, m=60) mean square err:    48.71 (train) and   238.27 (test)
+SG(x^3, λ=  0.16, m=60) θ=[-230.68,  3.89, 80.08, 333.24]                    took: 2523.53ms (3622)	err:  49.63
+SG(x^3, λ=  0.16, m=60) mean square err:    49.63 (train) and   241.88 (test)
+SG(x^3, λ=  0.17, m=60) θ=[-229.44,  5.28, 79.22, 330.63]                    took: 2392.11ms (3607)	err:  50.64
+SG(x^3, λ=  0.17, m=60) mean square err:    50.64 (train) and   245.73 (test)
+SG(x^3, λ=  0.18, m=60) θ=[-228.07,  6.81, 78.27, 327.76]                    took: 2201.48ms (3334)	err:  51.84
+SG(x^3, λ=  0.18, m=60) mean square err:    51.84 (train) and   250.22 (test)
+SG(x^3, λ=  0.19, m=60) θ=[-226.87,  8.13, 77.44, 325.25]                    took: 2643.46ms (4033)	err:  52.98
+SG(x^3, λ=  0.19, m=60) mean square err:    52.98 (train) and   254.22 (test)
+SG(x^3, λ=  0.20, m=60) θ=[-225.45,  9.70, 76.45, 322.29]                    took: 2503.23ms (3895)	err:  54.42
+SG(x^3, λ=  0.20, m=60) mean square err:    54.42 (train) and   259.23 (test)
+SG(x^3, λ=  0.21, m=60) θ=[-224.01, 11.29, 75.45, 319.29]                    took: 2594.69ms (3843)	err:  56.00
+SG(x^3, λ=  0.21, m=60) mean square err:    56.00 (train) and   264.41 (test)
+SG(x^3, λ=  0.22, m=60) θ=[-222.42, 13.06, 74.34, 315.95]                    took: 2092.44ms (3234)	err:  57.89
+SG(x^3, λ=  0.22, m=60) mean square err:    57.89 (train) and   270.51 (test)
+SG(x^3, λ=  0.23, m=60) θ=[-220.98, 14.63, 73.35, 312.96]                    took: 2302.16ms (3492)	err:  59.71
+SG(x^3, λ=  0.23, m=60) mean square err:    59.71 (train) and   276.22 (test)
+SG(x^3, λ=  0.24, m=60) θ=[-219.51, 16.23, 72.32, 309.91]                    took: 2727.87ms (3912)	err:  61.68
+SG(x^3, λ=  0.24, m=60) mean square err:    61.68 (train) and   282.34 (test)
+SG(x^3, λ=  0.25, m=60) θ=[-217.76, 18.14, 71.10, 306.25]                    took: 2007.51ms (2945)	err:  64.19
+SG(x^3, λ=  0.25, m=60) mean square err:    64.19 (train) and   290.36 (test)
+SG(x^3, λ=  0.26, m=60) θ=[-216.36, 19.65, 70.14, 303.39]                    took: 2944.26ms (4005)	err:  66.28
+SG(x^3, λ=  0.26, m=60) mean square err:    66.28 (train) and   296.05 (test)
+SG(x^3, λ=  0.27, m=60) θ=[-214.77, 21.37, 69.03, 300.08]                    took: 2976.25ms (4238)	err:  68.82
+SG(x^3, λ=  0.27, m=60) mean square err:    68.82 (train) and   303.71 (test)
+SG(x^3, λ=  0.28, m=60) θ=[-213.15, 23.12, 67.91, 296.75]                    took: 3081.00ms (4394)	err:  71.51
+SG(x^3, λ=  0.28, m=60) mean square err:    71.51 (train) and   311.09 (test)
+SG(x^3, λ=  0.29, m=60) θ=[-211.46, 24.93, 66.73, 293.26]                    took: 2770.44ms (3724)	err:  74.50
+SG(x^3, λ=  0.29, m=60) mean square err:    74.50 (train) and   319.60 (test)
+SG(x^3, λ=  0.30, m=60) θ=[-209.81, 26.68, 65.59, 289.87]                    took: 2775.78ms (3796)	err:  77.53
+SG(x^3, λ=  0.30, m=60) mean square err:    77.53 (train) and   328.11 (test)
+SG(x^3, λ=  0.31, m=60) θ=[-208.15, 28.43, 64.44, 286.47]                    took: 2612.43ms (3908)	err:  80.74
+SG(x^3, λ=  0.31, m=60) mean square err:    80.74 (train) and   337.12 (test)
+SG(x^3, λ=  0.32, m=60) θ=[-206.50, 30.18, 63.28, 283.07]                    took: 2682.01ms (4010)	err:  84.08
+SG(x^3, λ=  0.32, m=60) mean square err:    84.08 (train) and   346.34 (test)
+SG(x^3, λ=  0.33, m=60) θ=[-204.82, 31.94, 62.12, 279.66]                    took: 2607.47ms (4027)	err:  87.60
+SG(x^3, λ=  0.33, m=60) mean square err:    87.60 (train) and   355.66 (test)
+SG(x^3, λ=  0.34, m=60) θ=[-203.16, 33.67, 60.96, 276.27]                    took: 2887.61ms (4341)	err:  91.23
+SG(x^3, λ=  0.34, m=60) mean square err:    91.23 (train) and   365.54 (test)
+SG(x^3, λ=  0.35, m=60) θ=[-201.48, 35.41, 59.80, 272.86]                    took: 2949.98ms (4418)	err:  95.04
+SG(x^3, λ=  0.35, m=60) mean square err:    95.04 (train) and   375.75 (test)
+SG(x^3, λ=  0.36, m=60) θ=[-199.80, 37.14, 58.63, 269.45]                    took: 2729.87ms (4087)	err:  98.99
+SG(x^3, λ=  0.36, m=60) mean square err:    98.99 (train) and   386.38 (test)
+SG(x^3, λ=  0.37, m=60) θ=[-198.11, 38.86, 57.47, 266.07]                    took: 2708.60ms (3731)	err: 103.07
+SG(x^3, λ=  0.37, m=60) mean square err:   103.07 (train) and   396.32 (test)
+SG(x^3, λ=  0.38, m=60) θ=[-196.48, 40.53, 56.32, 262.74]                    took: 2798.83ms (4182)	err: 107.23
+SG(x^3, λ=  0.38, m=60) mean square err:   107.23 (train) and   408.16 (test)
+SG(x^3, λ=  0.39, m=60) θ=[-194.80, 42.22, 55.17, 259.38]                    took: 2340.43ms (3587)	err: 111.56
+SG(x^3, λ=  0.39, m=60) mean square err:   111.56 (train) and   418.85 (test)
+SG(x^3, λ=  0.40, m=60) θ=[-193.19, 43.84, 54.03, 256.12]                    took: 2719.13ms (4139)	err: 115.93
+SG(x^3, λ=  0.40, m=60) mean square err:   115.93 (train) and   431.18 (test)
+SG(x^3, λ=  0.41, m=60) θ=[-191.56, 45.45, 52.90, 252.87]                    took: 3006.21ms (4592)	err: 120.41
+SG(x^3, λ=  0.41, m=60) mean square err:   120.41 (train) and   443.06 (test)
+SG(x^3, λ=  0.42, m=60) θ=[-189.94, 47.05, 51.77, 249.64]                    took: 2890.46ms (4402)	err: 125.00
+SG(x^3, λ=  0.42, m=60) mean square err:   125.00 (train) and   454.91 (test)
+SG(x^3, λ=  0.43, m=60) θ=[-188.34, 48.62, 50.64, 246.44]                    took: 2549.90ms (3977)	err: 129.70
+SG(x^3, λ=  0.43, m=60) mean square err:   129.70 (train) and   467.71 (test)
+SG(x^3, λ=  0.44, m=60) θ=[-186.73, 50.17, 49.55, 243.29]                    took: 2389.45ms (3728)	err: 134.44
+SG(x^3, λ=  0.44, m=60) mean square err:   134.44 (train) and   479.35 (test)
+SG(x^3, λ=  0.45, m=60) θ=[-185.17, 51.67, 48.45, 240.19]                    took: 2812.59ms (4229)	err: 139.24
+SG(x^3, λ=  0.45, m=60) mean square err:   139.24 (train) and   492.44 (test)
+SG(x^3, λ=  0.46, m=60) θ=[-183.62, 53.15, 47.37, 237.13]                    took: 2735.55ms (4225)	err: 144.12
+SG(x^3, λ=  0.46, m=60) mean square err:   144.12 (train) and   505.39 (test)
+SG(x^3, λ=  0.47, m=60) θ=[-182.07, 54.61, 46.30, 234.10]                    took: 2557.75ms (3858)	err: 149.07
+SG(x^3, λ=  0.47, m=60) mean square err:   149.07 (train) and   518.43 (test)
+SG(x^3, λ=  0.48, m=60) θ=[-180.55, 56.03, 45.24, 231.13]                    took: 2535.21ms (3832)	err: 154.05
+SG(x^3, λ=  0.48, m=60) mean square err:   154.05 (train) and   531.70 (test)
+SG(x^3, λ=  0.49, m=60) θ=[-179.05, 57.41, 44.19, 228.21]                    took: 3125.63ms (4588)	err: 159.06
+SG(x^3, λ=  0.49, m=60) mean square err:   159.06 (train) and   544.98 (test)
+SG(x^3, λ=  0.50, m=60) θ=[-177.56, 58.77, 43.16, 225.33]                    took: 2837.40ms (4363)	err: 164.13
+SG(x^3, λ=  0.50, m=60) mean square err:   164.13 (train) and   558.44 (test)
+SG(x^3, λ=  0.51, m=60) θ=[-176.10, 60.09, 42.14, 222.49]                    took: 3094.71ms (4538)	err: 169.23
+SG(x^3, λ=  0.51, m=60) mean square err:   169.23 (train) and   572.53 (test)
+SG(x^3, λ=  0.52, m=60) θ=[-174.65, 61.40, 41.14, 219.70]                    took: 2558.32ms (3862)	err: 174.34
+SG(x^3, λ=  0.52, m=60) mean square err:   174.34 (train) and   585.83 (test)
+SG(x^3, λ=  0.53, m=60) θ=[-173.22, 62.66, 40.14, 216.96]                    took: 2054.10ms (3172)	err: 179.49
+SG(x^3, λ=  0.53, m=60) mean square err:   179.49 (train) and   599.71 (test)
+SG(x^3, λ=  0.54, m=60) θ=[-171.81, 63.88, 39.16, 214.29]                    took: 2859.10ms (4374)	err: 184.63
+SG(x^3, λ=  0.54, m=60) mean square err:   184.63 (train) and   613.64 (test)
+SG(x^3, λ=  0.55, m=60) θ=[-170.42, 65.08, 38.20, 211.65]                    took: 2663.07ms (4135)	err: 189.80
+SG(x^3, λ=  0.55, m=60) mean square err:   189.80 (train) and   627.71 (test)
+SG(x^3, λ=  0.56, m=60) θ=[-169.05, 66.25, 37.25, 209.07]                    took: 2777.15ms (4154)	err: 194.94
+SG(x^3, λ=  0.56, m=60) mean square err:   194.94 (train) and   641.17 (test)
+SG(x^3, λ=  0.57, m=60) θ=[-167.70, 67.38, 36.31, 206.52]                    took: 3192.39ms (4723)	err: 200.14
+SG(x^3, λ=  0.57, m=60) mean square err:   200.14 (train) and   656.02 (test)
+SG(x^3, λ=  0.58, m=60) θ=[-166.37, 68.48, 35.39, 204.03]                    took: 3077.17ms (4765)	err: 205.32
+SG(x^3, λ=  0.58, m=60) mean square err:   205.32 (train) and   670.27 (test)
+SG(x^3, λ=  0.59, m=60) θ=[-165.05, 69.55, 34.49, 201.59]                    took: 3001.63ms (4535)	err: 210.48
+SG(x^3, λ=  0.59, m=60) mean square err:   210.48 (train) and   684.14 (test)
+SG(x^3, λ=  0.60, m=60) θ=[-163.77, 70.59, 33.59, 199.19]                    took: 3001.64ms (4297)	err: 215.65
+SG(x^3, λ=  0.60, m=60) mean square err:   215.65 (train) and   699.01 (test)
+SG(x^3, λ=  0.61, m=60) θ=[-162.49, 71.60, 32.71, 196.84]                    took: 2972.39ms (4557)	err: 220.80
+SG(x^3, λ=  0.61, m=60) mean square err:   220.80 (train) and   713.50 (test)
+SG(x^3, λ=  0.62, m=60) θ=[-161.24, 72.57, 31.84, 194.54]                    took: 2828.48ms (4247)	err: 225.94
+SG(x^3, λ=  0.62, m=60) mean square err:   225.94 (train) and   728.07 (test)
+SG(x^3, λ=  0.63, m=60) θ=[-160.00, 73.52, 30.99, 192.28]                    took: 2993.97ms (4411)	err: 231.08
+SG(x^3, λ=  0.63, m=60) mean square err:   231.08 (train) and   742.75 (test)
+SG(x^3, λ=  0.64, m=60) θ=[-158.79, 74.44, 30.15, 190.07]                    took: 3069.21ms (4566)	err: 236.18
+SG(x^3, λ=  0.64, m=60) mean square err:   236.18 (train) and   757.22 (test)
+SG(x^3, λ=  0.65, m=60) θ=[-157.61, 75.32, 29.31, 187.90]                    took: 2761.97ms (4043)	err: 241.30
+SG(x^3, λ=  0.65, m=60) mean square err:   241.30 (train) and   773.29 (test)
+SG(x^3, λ=  0.66, m=60) θ=[-156.40, 76.19, 28.51, 185.79]                    took: 3210.77ms (4592)	err: 246.32
+SG(x^3, λ=  0.66, m=60) mean square err:   246.32 (train) and   786.07 (test)
+SG(x^3, λ=  0.67, m=60) θ=[-155.25, 77.02, 27.71, 183.70]                    took: 3186.96ms (4362)	err: 251.39
+SG(x^3, λ=  0.67, m=60) mean square err:   251.39 (train) and   801.35 (test)
+SG(x^3, λ=  0.68, m=60) θ=[-154.10, 77.83, 26.92, 181.66]                    took: 3083.49ms (4767)	err: 256.42
+SG(x^3, λ=  0.68, m=60) mean square err:   256.42 (train) and   816.06 (test)
+SG(x^3, λ=  0.69, m=60) θ=[-152.97, 78.61, 26.14, 179.67]                    took: 3056.87ms (4715)	err: 261.44
+SG(x^3, λ=  0.69, m=60) mean square err:   261.44 (train) and   830.99 (test)
+SG(x^3, λ=  0.70, m=60) θ=[-151.86, 79.36, 25.38, 177.71]                    took: 3023.43ms (4549)	err: 266.40
+SG(x^3, λ=  0.70, m=60) mean square err:   266.40 (train) and   845.63 (test)
+SG(x^3, λ=  0.71, m=60) θ=[-150.76, 80.08, 24.63, 175.80]                    took: 2991.84ms (4342)	err: 271.35
+SG(x^3, λ=  0.71, m=60) mean square err:   271.35 (train) and   860.39 (test)
+SG(x^3, λ=  0.72, m=60) θ=[-149.72, 80.77, 23.88, 173.92]                    took: 2085.74ms (3263)	err: 276.32
+SG(x^3, λ=  0.72, m=60) mean square err:   276.32 (train) and   877.26 (test)
+SG(x^3, λ=  0.73, m=60) θ=[-148.62, 81.46, 23.16, 172.09]                    took: 3235.98ms (4902)	err: 281.20
+SG(x^3, λ=  0.73, m=60) mean square err:   281.20 (train) and   890.19 (test)
+SG(x^3, λ=  0.74, m=60) θ=[-147.57, 82.11, 22.45, 170.29]                    took: 2898.88ms (4453)	err: 286.07
+SG(x^3, λ=  0.74, m=60) mean square err:   286.07 (train) and   905.16 (test)
+SG(x^3, λ=  0.75, m=60) θ=[-146.53, 82.74, 21.75, 168.53]                    took: 3190.42ms (4670)	err: 290.91
+SG(x^3, λ=  0.75, m=60) mean square err:   290.91 (train) and   919.68 (test)
+SG(x^3, λ=  0.76, m=60) θ=[-145.52, 83.34, 21.05, 166.80]                    took: 3092.96ms (4700)	err: 295.76
+SG(x^3, λ=  0.76, m=60) mean square err:   295.76 (train) and   934.93 (test)
+SG(x^3, λ=  0.77, m=60) θ=[-144.52, 83.92, 20.37, 165.11]                    took: 2968.25ms (4324)	err: 300.55
+SG(x^3, λ=  0.77, m=60) mean square err:   300.55 (train) and   950.02 (test)
+SG(x^3, λ=  0.78, m=60) θ=[-143.53, 84.48, 19.70, 163.45]                    took: 2988.75ms (4529)	err: 305.33
+SG(x^3, λ=  0.78, m=60) mean square err:   305.33 (train) and   964.86 (test)
+SG(x^3, λ=  0.79, m=60) θ=[-142.55, 85.02, 19.04, 161.82]                    took: 3146.12ms (4741)	err: 310.08
+SG(x^3, λ=  0.79, m=60) mean square err:   310.08 (train) and   979.94 (test)
+SG(x^3, λ=  0.80, m=60) θ=[-141.59, 85.53, 18.39, 160.23]                    took: 2985.09ms (4564)	err: 314.80
+SG(x^3, λ=  0.80, m=60) mean square err:   314.80 (train) and   994.90 (test)
+SG(x^3, λ=  0.81, m=60) θ=[-140.64, 86.03, 17.75, 158.67]                    took: 3232.75ms (4893)	err: 319.51
+SG(x^3, λ=  0.81, m=60) mean square err:   319.51 (train) and  1009.93 (test)
+SG(x^3, λ=  0.82, m=60) θ=[-139.71, 86.51, 17.12, 157.15]                    took: 2861.81ms (4453)	err: 324.16
+SG(x^3, λ=  0.82, m=60) mean square err:   324.16 (train) and  1024.78 (test)
+SG(x^3, λ=  0.83, m=60) θ=[-138.79, 86.96, 16.50, 155.65]                    took: 3198.86ms (4906)	err: 328.83
+SG(x^3, λ=  0.83, m=60) mean square err:   328.83 (train) and  1039.99 (test)
+SG(x^3, λ=  0.84, m=60) θ=[-137.89, 87.39, 15.89, 154.17]                    took: 2716.22ms (4178)	err: 333.50
+SG(x^3, λ=  0.84, m=60) mean square err:   333.50 (train) and  1056.05 (test)
+SG(x^3, λ=  0.85, m=60) θ=[-136.98, 87.81, 15.29, 152.74]                    took: 3276.33ms (5000)	err: 338.06
+SG(x^3, λ=  0.85, m=60) mean square err:   338.06 (train) and  1070.07 (test)
+SG(x^3, λ=  0.86, m=60) θ=[-136.10, 88.21, 14.70, 151.33]                    took: 2859.08ms (4463)	err: 342.66
+SG(x^3, λ=  0.86, m=60) mean square err:   342.66 (train) and  1085.71 (test)
+SG(x^3, λ=  0.87, m=60) θ=[-135.21, 88.60, 14.12, 149.95]                    took: 3047.87ms (4640)	err: 347.18
+SG(x^3, λ=  0.87, m=60) mean square err:   347.18 (train) and  1099.85 (test)
+SG(x^3, λ=  0.88, m=60) θ=[-134.35, 88.96, 13.55, 148.59]                    took: 3195.51ms (5000)	err: 351.74
+SG(x^3, λ=  0.88, m=60) mean square err:   351.74 (train) and  1115.18 (test)
+SG(x^3, λ=  0.89, m=60) θ=[-133.50, 89.31, 12.99, 147.26]                    took: 3027.26ms (4591)	err: 356.26
+SG(x^3, λ=  0.89, m=60) mean square err:   356.26 (train) and  1130.35 (test)
+SG(x^3, λ=  0.90, m=60) θ=[-132.66, 89.64, 12.43, 145.96]                    took: 3058.40ms (4527)	err: 360.76
+SG(x^3, λ=  0.90, m=60) mean square err:   360.76 (train) and  1145.54 (test)
+SG(x^3, λ=  0.91, m=60) θ=[-131.83, 89.95, 11.89, 144.68]                    took: 2594.22ms (3862)	err: 365.22
+SG(x^3, λ=  0.91, m=60) mean square err:   365.22 (train) and  1160.21 (test)
+SG(x^3, λ=  0.92, m=60) θ=[-131.01, 90.25, 11.35, 143.42]                    took: 2782.49ms (4231)	err: 369.70
+SG(x^3, λ=  0.92, m=60) mean square err:   369.70 (train) and  1175.71 (test)
+SG(x^3, λ=  0.93, m=60) θ=[-130.19, 90.54, 10.82, 142.20]                    took: 3396.10ms (4820)	err: 374.12
+SG(x^3, λ=  0.93, m=60) mean square err:   374.12 (train) and  1190.00 (test)
+SG(x^3, λ=  0.94, m=60) θ=[-129.40, 90.80, 10.30, 140.98]                    took: 3142.28ms (4194)	err: 378.59
+SG(x^3, λ=  0.94, m=60) mean square err:   378.59 (train) and  1206.24 (test)
+SG(x^3, λ=  0.95, m=60) θ=[-128.61, 91.06,  9.78, 139.80]                    took: 3272.38ms (4837)	err: 383.01
+SG(x^3, λ=  0.95, m=60) mean square err:   383.01 (train) and  1221.25 (test)
+SG(x^3, λ=  0.96, m=60) θ=[-127.83, 91.30,  9.28, 138.63]                    took: 2998.36ms (4587)	err: 387.42
+SG(x^3, λ=  0.96, m=60) mean square err:   387.42 (train) and  1236.49 (test)
+SG(x^3, λ=  0.97, m=60) θ=[-127.06, 91.53,  8.78, 137.49]                    took: 3198.17ms (4570)	err: 391.81
+SG(x^3, λ=  0.97, m=60) mean square err:   391.81 (train) and  1251.72 (test)
+SG(x^3, λ=  0.98, m=60) θ=[-126.29, 91.74,  8.29, 136.37]                    took: 3306.78ms (5000)	err: 396.15
+SG(x^3, λ=  0.98, m=60) mean square err:   396.15 (train) and  1266.23 (test)
+SG(x^3, λ=  0.99, m=60) θ=[-125.54, 91.94,  7.81, 135.26]                    took: 3201.29ms (4752)	err: 400.56
+SG(x^3, λ=  0.99, m=60) mean square err:   400.56 (train) and  1282.21 (test)
+****** n = 5
+SG(x^5, λ= -1.00, m=60) θ=[-160.83, 83.23, 37.01, 92.87, -17.67, 81.21]      took: 3918.01ms (4703)	err: 243.88
+SG(x^5, λ= -1.00, m=60) mean square err:   243.88 (train) and  1079.35 (test)
+SG(x^5, λ= -0.99, m=60) θ=[-161.73, 83.16, 37.59, 93.40, -17.61, 81.74]      took: 4040.52ms (4691)	err: 240.34
+SG(x^5, λ= -0.99, m=60) mean square err:   240.34 (train) and  1065.22 (test)
+SG(x^5, λ= -0.98, m=60) θ=[-162.64, 83.07, 38.18, 93.93, -17.55, 82.28]      took: 4411.07ms (5000)	err: 236.82
+SG(x^5, λ= -0.98, m=60) mean square err:   236.82 (train) and  1050.91 (test)
+SG(x^5, λ= -0.97, m=60) θ=[-163.55, 82.98, 38.79, 94.48, -17.48, 82.84]      took: 3483.62ms (4276)	err: 233.27
+SG(x^5, λ= -0.97, m=60) mean square err:   233.27 (train) and  1035.81 (test)
+SG(x^5, λ= -0.96, m=60) θ=[-164.47, 82.88, 39.39, 95.03, -17.42, 83.39]      took: 3547.77ms (4480)	err: 229.78
+SG(x^5, λ= -0.96, m=60) mean square err:   229.78 (train) and  1021.70 (test)
+SG(x^5, λ= -0.95, m=60) θ=[-165.40, 82.78, 40.00, 95.59, -17.35, 83.96]      took: 3440.91ms (4266)	err: 226.28
+SG(x^5, λ= -0.95, m=60) mean square err:   226.28 (train) and  1007.15 (test)
+SG(x^5, λ= -0.94, m=60) θ=[-166.33, 82.67, 40.62, 96.16, -17.28, 84.53]      took: 3538.53ms (4423)	err: 222.81
+SG(x^5, λ= -0.94, m=60) mean square err:   222.81 (train) and   992.59 (test)
+SG(x^5, λ= -0.93, m=60) θ=[-167.28, 82.54, 41.24, 96.73, -17.21, 85.11]      took: 3761.37ms (4675)	err: 219.36
+SG(x^5, λ= -0.93, m=60) mean square err:   219.36 (train) and   978.50 (test)
+SG(x^5, λ= -0.92, m=60) θ=[-168.23, 82.41, 41.86, 97.31, -17.14, 85.69]      took: 3842.72ms (4770)	err: 215.92
+SG(x^5, λ= -0.92, m=60) mean square err:   215.92 (train) and   964.15 (test)
+SG(x^5, λ= -0.91, m=60) θ=[-169.19, 82.27, 42.49, 97.90, -17.07, 86.29]      took: 3582.53ms (4648)	err: 212.50
+SG(x^5, λ= -0.91, m=60) mean square err:   212.50 (train) and   950.12 (test)
+SG(x^5, λ= -0.90, m=60) θ=[-170.16, 82.13, 43.13, 98.50, -16.99, 86.89]      took: 3801.94ms (4754)	err: 209.10
+SG(x^5, λ= -0.90, m=60) mean square err:   209.10 (train) and   935.88 (test)
+SG(x^5, λ= -0.89, m=60) θ=[-171.13, 81.98, 43.78, 99.12, -16.92, 87.51]      took: 3271.49ms (4148)	err: 205.62
+SG(x^5, λ= -0.89, m=60) mean square err:   205.62 (train) and   919.86 (test)
+SG(x^5, λ= -0.88, m=60) θ=[-172.13, 81.80, 44.42, 99.73, -16.84, 88.11]      took: 3909.28ms (4875)	err: 202.35
+SG(x^5, λ= -0.88, m=60) mean square err:   202.35 (train) and   907.94 (test)
+SG(x^5, λ= -0.87, m=60) θ=[-173.12, 81.63, 45.08, 100.35, -16.76, 88.74]     took: 3666.83ms (4447)	err: 199.00
+SG(x^5, λ= -0.87, m=60) mean square err:   199.00 (train) and   893.90 (test)
+SG(x^5, λ= -0.86, m=60) θ=[-174.13, 81.44, 45.73, 100.98, -16.68, 89.36]     took: 3835.42ms (4757)	err: 195.71
+SG(x^5, λ= -0.86, m=60) mean square err:   195.71 (train) and   880.92 (test)
+SG(x^5, λ= -0.85, m=60) θ=[-175.14, 81.25, 46.40, 101.63, -16.59, 90.00]     took: 3840.40ms (4834)	err: 192.37
+SG(x^5, λ= -0.85, m=60) mean square err:   192.37 (train) and   866.35 (test)
+SG(x^5, λ= -0.84, m=60) θ=[-176.16, 81.04, 47.07, 102.29, -16.50, 90.65]     took: 3512.19ms (4432)	err: 189.08
+SG(x^5, λ= -0.84, m=60) mean square err:   189.08 (train) and   852.74 (test)
+SG(x^5, λ= -0.83, m=60) θ=[-177.20, 80.82, 47.74, 102.95, -16.41, 91.30]     took: 3514.68ms (4418)	err: 185.85
+SG(x^5, λ= -0.83, m=60) mean square err:   185.85 (train) and   839.94 (test)
+SG(x^5, λ= -0.82, m=60) θ=[-178.23, 80.60, 48.43, 103.63, -16.32, 91.97]     took: 3041.89ms (3871)	err: 182.55
+SG(x^5, λ= -0.82, m=60) mean square err:   182.55 (train) and   825.45 (test)
+SG(x^5, λ= -0.81, m=60) θ=[-179.28, 80.36, 49.10, 104.31, -16.22, 92.63]     took: 3814.42ms (4584)	err: 179.36
+SG(x^5, λ= -0.81, m=60) mean square err:   179.36 (train) and   812.27 (test)
+SG(x^5, λ= -0.80, m=60) θ=[-180.33, 80.12, 49.79, 105.01, -16.12, 93.30]     took: 3969.87ms (4903)	err: 176.17
+SG(x^5, λ= -0.80, m=60) mean square err:   176.17 (train) and   799.01 (test)
+SG(x^5, λ= -0.79, m=60) θ=[-181.40, 79.86, 50.48, 105.71, -16.02, 93.99]     took: 3759.49ms (4441)	err: 172.99
+SG(x^5, λ= -0.79, m=60) mean square err:   172.99 (train) and   785.77 (test)
+SG(x^5, λ= -0.78, m=60) θ=[-182.49, 79.58, 51.18, 106.42, -15.91, 94.67]     took: 3126.45ms (3779)	err: 169.89
+SG(x^5, λ= -0.78, m=60) mean square err:   169.89 (train) and   773.88 (test)
+SG(x^5, λ= -0.77, m=60) θ=[-183.56, 79.31, 51.88, 107.16, -15.80, 95.37]     took: 3839.46ms (4436)	err: 166.71
+SG(x^5, λ= -0.77, m=60) mean square err:   166.71 (train) and   759.47 (test)
+SG(x^5, λ= -0.76, m=60) θ=[-184.66, 79.02, 52.58, 107.91, -15.68, 96.08]     took: 3839.46ms (4654)	err: 163.61
+SG(x^5, λ= -0.76, m=60) mean square err:   163.61 (train) and   746.54 (test)
+SG(x^5, λ= -0.75, m=60) θ=[-185.76, 78.71, 53.29, 108.66, -15.56, 96.79]     took: 3913.53ms (4701)	err: 160.54
+SG(x^5, λ= -0.75, m=60) mean square err:   160.54 (train) and   733.75 (test)
+SG(x^5, λ= -0.74, m=60) θ=[-186.88, 78.40, 54.00, 109.43, -15.44, 97.51]     took: 3195.59ms (3571)	err: 157.48
+SG(x^5, λ= -0.74, m=60) mean square err:   157.48 (train) and   720.98 (test)
+SG(x^5, λ= -0.73, m=60) θ=[-187.99, 78.07, 54.71, 110.21, -15.31, 98.23]     took: 3812.08ms (4662)	err: 154.47
+SG(x^5, λ= -0.73, m=60) mean square err:   154.47 (train) and   708.26 (test)
+SG(x^5, λ= -0.72, m=60) θ=[-189.12, 77.73, 55.43, 111.00, -15.18, 98.96]     took: 3279.56ms (4078)	err: 151.48
+SG(x^5, λ= -0.72, m=60) mean square err:   151.48 (train) and   695.78 (test)
+SG(x^5, λ= -0.71, m=60) θ=[-190.26, 77.38, 56.15, 111.81, -15.04, 99.70]     took: 3793.47ms (4632)	err: 148.53
+SG(x^5, λ= -0.71, m=60) mean square err:   148.53 (train) and   683.23 (test)
+SG(x^5, λ= -0.70, m=60) θ=[-191.41, 77.01, 56.87, 112.63, -14.89, 100.44]    took: 3706.66ms (4488)	err: 145.60
+SG(x^5, λ= -0.70, m=60) mean square err:   145.60 (train) and   671.01 (test)
+SG(x^5, λ= -0.69, m=60) θ=[-192.57, 76.63, 57.59, 113.47, -14.74, 101.18]    took: 4028.06ms (4862)	err: 142.72
+SG(x^5, λ= -0.69, m=60) mean square err:   142.72 (train) and   659.10 (test)
+SG(x^5, λ= -0.68, m=60) θ=[-193.73, 76.24, 58.32, 114.32, -14.59, 101.94]    took: 3169.76ms (3855)	err: 139.83
+SG(x^5, λ= -0.68, m=60) mean square err:   139.83 (train) and   646.56 (test)
+SG(x^5, λ= -0.67, m=60) θ=[-194.90, 75.84, 59.04, 115.19, -14.42, 102.69]    took: 3741.94ms (4575)	err: 137.00
+SG(x^5, λ= -0.67, m=60) mean square err:   137.00 (train) and   634.71 (test)
+SG(x^5, λ= -0.66, m=60) θ=[-196.08, 75.42, 59.77, 116.07, -14.26, 103.45]    took: 3474.91ms (4218)	err: 134.20
+SG(x^5, λ= -0.66, m=60) mean square err:   134.20 (train) and   622.82 (test)
+SG(x^5, λ= -0.65, m=60) θ=[-197.27, 74.99, 60.51, 116.98, -14.08, 104.22]    took: 3355.17ms (4106)	err: 131.41
+SG(x^5, λ= -0.65, m=60) mean square err:   131.41 (train) and   610.32 (test)
+SG(x^5, λ= -0.64, m=60) θ=[-198.47, 74.55, 61.23, 117.90, -13.91, 104.98]    took: 3189.78ms (3773)	err: 128.71
+SG(x^5, λ= -0.64, m=60) mean square err:   128.71 (train) and   599.58 (test)
+SG(x^5, λ= -0.63, m=60) θ=[-199.67, 74.09, 61.96, 118.83, -13.71, 105.75]    took: 3619.76ms (4506)	err: 126.02
+SG(x^5, λ= -0.63, m=60) mean square err:   126.02 (train) and   587.97 (test)
+SG(x^5, λ= -0.62, m=60) θ=[-200.88, 73.62, 62.69, 119.79, -13.52, 106.52]    took: 3386.23ms (4221)	err: 123.37
+SG(x^5, λ= -0.62, m=60) mean square err:   123.37 (train) and   576.46 (test)
+SG(x^5, λ= -0.61, m=60) θ=[-202.10, 73.13, 63.42, 120.77, -13.31, 107.29]    took: 3446.45ms (4174)	err: 120.75
+SG(x^5, λ= -0.61, m=60) mean square err:   120.75 (train) and   565.32 (test)
+SG(x^5, λ= -0.60, m=60) θ=[-203.33, 72.63, 64.14, 121.76, -13.10, 108.06]    took: 3708.86ms (4576)	err: 118.18
+SG(x^5, λ= -0.60, m=60) mean square err:   118.18 (train) and   554.32 (test)
+SG(x^5, λ= -0.59, m=60) θ=[-204.56, 72.12, 64.87, 122.78, -12.89, 108.83]    took: 3781.92ms (4574)	err: 115.64
+SG(x^5, λ= -0.59, m=60) mean square err:   115.64 (train) and   542.99 (test)
+SG(x^5, λ= -0.58, m=60) θ=[-205.80, 71.58, 65.60, 123.82, -12.66, 109.59]    took: 3482.00ms (4368)	err: 113.15
+SG(x^5, λ= -0.58, m=60) mean square err:   113.15 (train) and   532.48 (test)
+SG(x^5, λ= -0.57, m=60) θ=[-207.04, 71.04, 66.33, 124.88, -12.44, 110.34]    took: 3275.01ms (4084)	err: 110.71
+SG(x^5, λ= -0.57, m=60) mean square err:   110.71 (train) and   521.80 (test)
+SG(x^5, λ= -0.56, m=60) θ=[-208.29, 70.48, 67.04, 125.97, -12.19, 111.11]    took: 3887.33ms (4779)	err: 108.31
+SG(x^5, λ= -0.56, m=60) mean square err:   108.31 (train) and   511.36 (test)
+SG(x^5, λ= -0.55, m=60) θ=[-209.53, 69.91, 67.77, 127.08, -11.97, 111.84]    took: 3440.69ms (4236)	err: 105.95
+SG(x^5, λ= -0.55, m=60) mean square err:   105.95 (train) and   501.04 (test)
+SG(x^5, λ= -0.54, m=60) θ=[-210.79, 69.32, 68.48, 128.21, -11.70, 112.60]    took: 4250.82ms (4861)	err: 103.63
+SG(x^5, λ= -0.54, m=60) mean square err:   103.63 (train) and   490.78 (test)
+SG(x^5, λ= -0.53, m=60) θ=[-212.04, 68.72, 69.20, 129.38, -11.45, 113.32]    took: 4802.70ms (4608)	err: 101.36
+SG(x^5, λ= -0.53, m=60) mean square err:   101.36 (train) and   480.74 (test)
+SG(x^5, λ= -0.52, m=60) θ=[-213.30, 68.10, 69.91, 130.56, -11.19, 114.04]    took: 3963.21ms (4699)	err:  99.14
+SG(x^5, λ= -0.52, m=60) mean square err:    99.14 (train) and   470.83 (test)
+SG(x^5, λ= -0.51, m=60) θ=[-214.53, 67.47, 70.63, 131.78, -10.95, 114.72]    took: 3436.87ms (4190)	err:  96.98
+SG(x^5, λ= -0.51, m=60) mean square err:    96.98 (train) and   461.06 (test)
+SG(x^5, λ= -0.50, m=60) θ=[-215.79, 66.82, 71.34, 133.03, -10.69, 115.40]    took: 3536.48ms (4161)	err:  94.87
+SG(x^5, λ= -0.50, m=60) mean square err:    94.87 (train) and   451.84 (test)
+SG(x^5, λ= -0.49, m=60) θ=[-217.03, 66.17, 72.05, 134.31, -10.44, 116.06]    took: 3410.62ms (4074)	err:  92.81
+SG(x^5, λ= -0.49, m=60) mean square err:    92.81 (train) and   442.48 (test)
+SG(x^5, λ= -0.48, m=60) θ=[-218.23, 65.51, 72.80, 135.61, -10.26, 116.63]    took: 3388.39ms (3535)	err:  90.82
+SG(x^5, λ= -0.48, m=60) mean square err:    90.82 (train) and   433.65 (test)
+SG(x^5, λ= -0.47, m=60) θ=[-219.53, 64.79, 73.44, 136.96, -9.87, 117.35]     took: 3845.35ms (4540)	err:  88.81
+SG(x^5, λ= -0.47, m=60) mean square err:    88.81 (train) and   424.26 (test)
+SG(x^5, λ= -0.46, m=60) θ=[-220.75, 64.09, 74.15, 138.34, -9.63, 117.92]     took: 3498.54ms (4186)	err:  86.91
+SG(x^5, λ= -0.46, m=60) mean square err:    86.91 (train) and   415.51 (test)
+SG(x^5, λ= -0.45, m=60) θ=[-221.96, 63.38, 74.86, 139.74, -9.40, 118.46]     took: 3382.60ms (4088)	err:  85.06
+SG(x^5, λ= -0.45, m=60) mean square err:    85.06 (train) and   406.84 (test)
+SG(x^5, λ= -0.44, m=60) θ=[-223.21, 62.63, 75.52, 141.20, -9.08, 119.02]     took: 3690.35ms (4380)	err:  83.24
+SG(x^5, λ= -0.44, m=60) mean square err:    83.24 (train) and   398.64 (test)
+SG(x^5, λ= -0.43, m=60) θ=[-224.42, 61.89, 76.20, 142.68, -8.81, 119.54]     took: 5310.63ms (4664)	err:  81.48
+SG(x^5, λ= -0.43, m=60) mean square err:    81.48 (train) and   390.41 (test)
+SG(x^5, λ= -0.42, m=60) θ=[-225.57, 61.14, 76.93, 144.19, -8.64, 119.94]     took: 3308.73ms (4075)	err:  79.82
+SG(x^5, λ= -0.42, m=60) mean square err:    79.82 (train) and   382.59 (test)
+SG(x^5, λ= -0.41, m=60) θ=[-226.75, 60.37, 77.61, 145.75, -8.41, 120.35]     took: 3403.57ms (4104)	err:  78.18
+SG(x^5, λ= -0.41, m=60) mean square err:    78.18 (train) and   374.82 (test)
+SG(x^5, λ= -0.40, m=60) θ=[-227.95, 59.57, 78.26, 147.36, -8.10, 120.79]     took: 3894.24ms (4540)	err:  76.57
+SG(x^5, λ= -0.40, m=60) mean square err:    76.57 (train) and   367.08 (test)
+SG(x^5, λ= -0.39, m=60) θ=[-229.09, 58.78, 78.95, 148.99, -7.90, 121.11]     took: 3564.36ms (4479)	err:  75.05
+SG(x^5, λ= -0.39, m=60) mean square err:    75.05 (train) and   359.84 (test)
+SG(x^5, λ= -0.38, m=60) θ=[-230.19, 57.98, 79.65, 150.67, -7.74, 121.35]     took: 3434.88ms (4308)	err:  73.59
+SG(x^5, λ= -0.38, m=60) mean square err:    73.59 (train) and   352.75 (test)
+SG(x^5, λ= -0.37, m=60) θ=[-231.28, 57.17, 80.35, 152.36, -7.59, 121.57]     took: 3373.72ms (4204)	err:  72.18
+SG(x^5, λ= -0.37, m=60) mean square err:    72.18 (train) and   345.95 (test)
+SG(x^5, λ= -0.36, m=60) θ=[-232.29, 56.37, 81.10, 154.09, -7.56, 121.66]     took: 3031.05ms (3784)	err:  70.86
+SG(x^5, λ= -0.36, m=60) mean square err:    70.86 (train) and   339.40 (test)
+SG(x^5, λ= -0.35, m=60) θ=[-233.43, 55.50, 81.70, 155.92, -7.24, 121.88]     took: 3441.82ms (4290)	err:  69.51
+SG(x^5, λ= -0.35, m=60) mean square err:    69.51 (train) and   332.71 (test)
+SG(x^5, λ= -0.34, m=60) θ=[-234.42, 54.67, 82.42, 157.73, -7.20, 121.90]     took: 3163.74ms (4084)	err:  68.28
+SG(x^5, λ= -0.34, m=60) mean square err:    68.28 (train) and   326.63 (test)
+SG(x^5, λ= -0.33, m=60) θ=[-235.47, 53.80, 83.06, 159.62, -7.00, 121.95]     took: 3475.29ms (4415)	err:  67.07
+SG(x^5, λ= -0.33, m=60) mean square err:    67.07 (train) and   320.55 (test)
+SG(x^5, λ= -0.32, m=60) θ=[-236.42, 52.95, 83.76, 161.52, -6.97, 121.86]     took: 3404.13ms (4233)	err:  65.94
+SG(x^5, λ= -0.32, m=60) mean square err:    65.94 (train) and   314.66 (test)
+SG(x^5, λ= -0.31, m=60) θ=[-237.14, 52.21, 84.67, 163.28, -7.37, 121.54]     took: 2890.24ms (3472)	err:  64.98
+SG(x^5, λ= -0.31, m=60) mean square err:    64.98 (train) and   309.61 (test)
+SG(x^5, λ= -0.30, m=60) θ=[-238.20, 51.26, 85.20, 165.38, -7.02, 121.50]     took: 3248.36ms (4019)	err:  63.86
+SG(x^5, λ= -0.30, m=60) mean square err:    63.86 (train) and   303.63 (test)
+SG(x^5, λ= -0.29, m=60) θ=[-239.08, 50.40, 85.89, 167.33, -7.04, 121.26]     took: 3398.16ms (3986)	err:  62.90
+SG(x^5, λ= -0.29, m=60) mean square err:    62.90 (train) and   299.15 (test)
+SG(x^5, λ= -0.28, m=60) θ=[-239.89, 49.54, 86.59, 169.36, -7.10, 120.94]     took: 3278.60ms (3954)	err:  61.97
+SG(x^5, λ= -0.28, m=60) mean square err:    61.97 (train) and   293.76 (test)
+SG(x^5, λ= -0.27, m=60) θ=[-240.78, 48.63, 87.18, 171.46, -6.98, 120.67]     took: 3713.02ms (4358)	err:  61.05
+SG(x^5, λ= -0.27, m=60) mean square err:    61.05 (train) and   288.62 (test)
+SG(x^5, λ= -0.26, m=60) θ=[-241.55, 47.77, 87.86, 173.52, -7.06, 120.25]     took: 3564.32ms (4381)	err:  60.23
+SG(x^5, λ= -0.26, m=60) mean square err:    60.23 (train) and   284.32 (test)
+SG(x^5, λ= -0.25, m=60) θ=[-242.20, 46.97, 88.63, 175.48, -7.35, 119.72]     took: 3288.39ms (3987)	err:  59.51
+SG(x^5, λ= -0.25, m=60) mean square err:    59.51 (train) and   280.19 (test)
+SG(x^5, λ= -0.24, m=60) θ=[-242.90, 46.12, 89.31, 177.57, -7.49, 119.18]     took: 3418.91ms (4033)	err:  58.78
+SG(x^5, λ= -0.24, m=60) mean square err:    58.78 (train) and   276.09 (test)
+SG(x^5, λ= -0.23, m=60) θ=[-243.69, 45.18, 89.82, 179.81, -7.36, 118.70]     took: 3711.07ms (4596)	err:  58.02
+SG(x^5, λ= -0.23, m=60) mean square err:    58.02 (train) and   271.91 (test)
+SG(x^5, λ= -0.22, m=60) θ=[-244.22, 44.41, 90.58, 181.80, -7.74, 118.00]     took: 3524.81ms (4308)	err:  57.44
+SG(x^5, λ= -0.22, m=60) mean square err:    57.44 (train) and   268.38 (test)
+SG(x^5, λ= -0.21, m=60) θ=[-244.79, 43.61, 91.25, 183.81, -7.98, 117.35]     took: 3501.18ms (4225)	err:  56.87
+SG(x^5, λ= -0.21, m=60) mean square err:    56.87 (train) and   264.96 (test)
+SG(x^5, λ= -0.20, m=60) θ=[-245.35, 42.78, 91.87, 185.91, -8.16, 116.65]     took: 3690.83ms (4339)	err:  56.31
+SG(x^5, λ= -0.20, m=60) mean square err:    56.31 (train) and   261.56 (test)
+SG(x^5, λ= -0.19, m=60) θ=[-245.88, 41.98, 92.49, 187.96, -8.37, 115.93]     took: 3876.73ms (4442)	err:  55.80
+SG(x^5, λ= -0.19, m=60) mean square err:    55.80 (train) and   258.41 (test)
+SG(x^5, λ= -0.18, m=60) θ=[-246.26, 41.30, 93.22, 189.77, -8.85, 115.14]     took: 3275.65ms (4097)	err:  55.40
+SG(x^5, λ= -0.18, m=60) mean square err:    55.40 (train) and   255.70 (test)
+SG(x^5, λ= -0.17, m=60) θ=[-246.80, 40.47, 93.71, 191.92, -8.89, 114.40]     took: 3541.33ms (4473)	err:  54.90
+SG(x^5, λ= -0.17, m=60) mean square err:    54.90 (train) and   252.64 (test)
+SG(x^5, λ= -0.16, m=60) θ=[-247.14, 39.81, 94.37, 193.69, -9.33, 113.60]     took: 3422.38ms (4263)	err:  54.56
+SG(x^5, λ= -0.16, m=60) mean square err:    54.56 (train) and   250.19 (test)
+SG(x^5, λ= -0.15, m=60) θ=[-247.52, 39.13, 94.93, 195.49, -9.61, 112.85]     took: 3368.03ms (4290)	err:  54.21
+SG(x^5, λ= -0.15, m=60) mean square err:    54.21 (train) and   247.81 (test)
+SG(x^5, λ= -0.14, m=60) θ=[-247.89, 38.41, 95.43, 197.41, -9.81, 112.03]     took: 3622.18ms (4525)	err:  53.85
+SG(x^5, λ= -0.14, m=60) mean square err:    53.85 (train) and   245.48 (test)
+SG(x^5, λ= -0.13, m=60) θ=[-248.14, 37.86, 96.03, 198.95, -10.26, 111.27]    took: 3473.65ms (4389)	err:  53.62
+SG(x^5, λ= -0.13, m=60) mean square err:    53.62 (train) and   243.55 (test)
+SG(x^5, λ= -0.12, m=60) θ=[-248.40, 37.25, 96.54, 200.64, -10.58, 110.45]    took: 3569.75ms (4428)	err:  53.35
+SG(x^5, λ= -0.12, m=60) mean square err:    53.35 (train) and   241.66 (test)
+SG(x^5, λ= -0.11, m=60) θ=[-248.72, 36.66, 96.93, 202.21, -10.72, 109.79]    took: 3667.33ms (4620)	err:  53.09
+SG(x^5, λ= -0.11, m=60) mean square err:    53.09 (train) and   239.81 (test)
+SG(x^5, λ= -0.10, m=60) θ=[-248.91, 36.15, 97.40, 203.63, -11.07, 109.04]    took: 3673.70ms (4541)	err:  52.90
+SG(x^5, λ= -0.10, m=60) mean square err:    52.90 (train) and   238.49 (test)
+SG(x^5, λ= -0.09, m=60) θ=[-249.08, 35.73, 97.83, 204.81, -11.38, 108.45]    took: 3780.82ms (4453)	err:  52.75
+SG(x^5, λ= -0.09, m=60) mean square err:    52.75 (train) and   236.92 (test)
+SG(x^5, λ= -0.08, m=60) θ=[-249.26, 35.28, 98.19, 206.08, -11.62, 107.80]    took: 3665.38ms (4523)	err:  52.58
+SG(x^5, λ= -0.08, m=60) mean square err:    52.58 (train) and   235.82 (test)
+SG(x^5, λ= -0.07, m=60) θ=[-249.35, 34.95, 98.59, 207.02, -11.97, 107.26]    took: 3422.52ms (4273)	err:  52.48
+SG(x^5, λ= -0.07, m=60) mean square err:    52.48 (train) and   234.63 (test)
+SG(x^5, λ= -0.06, m=60) θ=[-249.48, 34.58, 98.85, 208.08, -12.14, 106.71]    took: 3550.47ms (4432)	err:  52.35
+SG(x^5, λ= -0.06, m=60) mean square err:    52.35 (train) and   233.64 (test)
+SG(x^5, λ= -0.05, m=60) θ=[-249.58, 34.31, 99.12, 208.83, -12.34, 106.31]    took: 3502.81ms (4368)	err:  52.27
+SG(x^5, λ= -0.05, m=60) mean square err:    52.27 (train) and   232.86 (test)
+SG(x^5, λ= -0.04, m=60) θ=[-249.66, 34.09, 99.34, 209.46, -12.51, 105.96]    took: 3859.89ms (4376)	err:  52.20
+SG(x^5, λ= -0.04, m=60) mean square err:    52.20 (train) and   232.45 (test)
+SG(x^5, λ= -0.03, m=60) θ=[-249.73, 33.89, 99.49, 210.01, -12.62, 105.67]    took: 3515.02ms (4370)	err:  52.14
+SG(x^5, λ= -0.03, m=60) mean square err:    52.14 (train) and   232.00 (test)
+SG(x^5, λ= -0.02, m=60) θ=[-249.79, 33.77, 99.58, 210.34, -12.66, 105.54]    took: 3480.71ms (4349)	err:  52.10
+SG(x^5, λ= -0.02, m=60) mean square err:    52.10 (train) and   231.37 (test)
+SG(x^5, λ= -0.01, m=60) θ=[-249.76, 33.75, 99.73, 210.45, -12.86, 105.40]    took: 3360.37ms (4255)	err:  52.12
+SG(x^5, λ= -0.01, m=60) mean square err:    52.12 (train) and   231.24 (test)
+SG(x^5, λ=  0.00, m=60) θ=[-249.83, 33.65, 99.67, 210.69, -12.70, 105.36]    took: 3620.32ms (4426)	err:  52.06
+SG(x^5, λ=  0.00, m=60) mean square err:    52.06 (train) and   230.99 (test)
+SG(x^5, λ=  0.01, m=60) θ=[-249.88, 33.61, 99.57, 210.76, -12.55, 105.40]    took: 3842.27ms (4702)	err:  52.03
+SG(x^5, λ=  0.01, m=60) mean square err:    52.03 (train) and   230.97 (test)
+SG(x^5, λ=  0.02, m=60) θ=[-249.75, 33.77, 99.63, 210.37, -12.74, 105.46]    took: 3614.75ms (4419)	err:  52.11
+SG(x^5, λ=  0.02, m=60) mean square err:    52.11 (train) and   231.36 (test)
+SG(x^5, λ=  0.03, m=60) θ=[-249.69, 33.92, 99.53, 209.96, -12.68, 105.66]    took: 3624.27ms (4427)	err:  52.16
+SG(x^5, λ=  0.03, m=60) mean square err:    52.16 (train) and   231.71 (test)
+SG(x^5, λ=  0.04, m=60) θ=[-249.70, 34.06, 99.28, 209.52, -12.41, 106.00]    took: 3638.57ms (4397)	err:  52.18
+SG(x^5, λ=  0.04, m=60) mean square err:    52.18 (train) and   232.21 (test)
+SG(x^5, λ=  0.05, m=60) θ=[-249.66, 34.25, 99.02, 208.93, -12.15, 106.37]    took: 3990.55ms (4624)	err:  52.23
+SG(x^5, λ=  0.05, m=60) mean square err:    52.23 (train) and   232.74 (test)
+SG(x^5, λ=  0.06, m=60) θ=[-249.40, 34.71, 98.97, 207.74, -12.35, 106.80]    took: 3386.92ms (4118)	err:  52.43
+SG(x^5, λ=  0.06, m=60) mean square err:    52.43 (train) and   233.83 (test)
+SG(x^5, λ=  0.07, m=60) θ=[-249.44, 34.84, 98.47, 207.29, -11.74, 107.22]    took: 3797.98ms (4716)	err:  52.41
+SG(x^5, λ=  0.07, m=60) mean square err:    52.41 (train) and   234.46 (test)
+SG(x^5, λ=  0.08, m=60) θ=[-249.23, 35.32, 98.23, 205.96, -11.68, 107.84]    took: 3573.86ms (4348)	err:  52.61
+SG(x^5, λ=  0.08, m=60) mean square err:    52.61 (train) and   235.75 (test)
+SG(x^5, λ=  0.09, m=60) θ=[-249.03, 35.76, 97.90, 204.76, -11.51, 108.40]    took: 3461.39ms (4297)	err:  52.77
+SG(x^5, λ=  0.09, m=60) mean square err:    52.77 (train) and   237.01 (test)
+SG(x^5, λ=  0.10, m=60) θ=[-248.91, 36.16, 97.40, 203.60, -11.06, 109.07]    took: 3631.60ms (4557)	err:  52.90
+SG(x^5, λ=  0.10, m=60) mean square err:    52.90 (train) and   238.29 (test)
+SG(x^5, λ=  0.11, m=60) θ=[-248.54, 36.82, 97.14, 201.86, -11.12, 109.75]    took: 3330.94ms (4065)	err:  53.21
+SG(x^5, λ=  0.11, m=60) mean square err:    53.21 (train) and   240.11 (test)
+SG(x^5, λ=  0.12, m=60) θ=[-248.34, 37.32, 96.61, 200.47, -10.72, 110.47]    took: 3386.57ms (4198)	err:  53.40
+SG(x^5, λ=  0.12, m=60) mean square err:    53.40 (train) and   241.73 (test)
+SG(x^5, λ=  0.13, m=60) θ=[-248.11, 37.90, 96.06, 198.85, -10.32, 111.29]    took: 3430.62ms (4207)	err:  53.64
+SG(x^5, λ=  0.13, m=60) mean square err:    53.64 (train) and   243.66 (test)
+SG(x^5, λ=  0.14, m=60) θ=[-247.79, 38.51, 95.55, 197.23, -10.04, 112.00]    took: 3367.24ms (4181)	err:  53.92
+SG(x^5, λ=  0.14, m=60) mean square err:    53.92 (train) and   245.36 (test)
+SG(x^5, λ=  0.15, m=60) θ=[-247.59, 39.06, 94.85, 195.66, -9.46, 112.84]     took: 3748.59ms (4605)	err:  54.16
+SG(x^5, λ=  0.15, m=60) mean square err:    54.16 (train) and   247.67 (test)
+SG(x^5, λ=  0.16, m=60) θ=[-247.10, 39.85, 94.42, 193.59, -9.42, 113.61]     took: 3340.72ms (4104)	err:  54.59
+SG(x^5, λ=  0.16, m=60) mean square err:    54.59 (train) and   250.30 (test)
+SG(x^5, λ=  0.17, m=60) θ=[-246.74, 40.52, 93.78, 191.83, -9.03, 114.36]     took: 3425.71ms (4318)	err:  54.94
+SG(x^5, λ=  0.17, m=60) mean square err:    54.94 (train) and   252.77 (test)
+SG(x^5, λ=  0.18, m=60) θ=[-246.28, 41.29, 93.20, 189.80, -8.80, 115.16]     took: 3399.65ms (4155)	err:  55.39
+SG(x^5, λ=  0.18, m=60) mean square err:    55.39 (train) and   255.56 (test)
+SG(x^5, λ=  0.19, m=60) θ=[-245.83, 42.01, 92.54, 187.92, -8.47, 115.88]     took: 3402.82ms (4246)	err:  55.82
+SG(x^5, λ=  0.19, m=60) mean square err:    55.82 (train) and   258.48 (test)
+SG(x^5, λ=  0.20, m=60) θ=[-245.36, 42.78, 91.87, 185.93, -8.15, 116.64]     took: 3471.29ms (4287)	err:  56.31
+SG(x^5, λ=  0.20, m=60) mean square err:    56.31 (train) and   261.55 (test)
+SG(x^5, λ=  0.21, m=60) θ=[-244.81, 43.60, 91.23, 183.83, -7.92, 117.38]     took: 3500.61ms (4258)	err:  56.86
+SG(x^5, λ=  0.21, m=60) mean square err:    56.86 (train) and   264.85 (test)
+SG(x^5, λ=  0.22, m=60) θ=[-244.25, 44.38, 90.54, 181.84, -7.65, 118.04]     took: 3529.17ms (4406)	err:  57.42
+SG(x^5, λ=  0.22, m=60) mean square err:    57.42 (train) and   268.24 (test)
+SG(x^5, λ=  0.23, m=60) θ=[-243.62, 45.22, 89.90, 179.75, -7.50, 118.64]     took: 3553.78ms (4354)	err:  58.06
+SG(x^5, λ=  0.23, m=60) mean square err:    58.06 (train) and   271.99 (test)
+SG(x^5, λ=  0.24, m=60) θ=[-242.99, 46.05, 89.20, 177.67, -7.28, 119.26]     took: 3629.15ms (4426)	err:  58.73
+SG(x^5, λ=  0.24, m=60) mean square err:    58.73 (train) and   275.89 (test)
+SG(x^5, λ=  0.25, m=60) θ=[-242.33, 46.88, 88.48, 175.65, -7.07, 119.80]     took: 3746.54ms (4587)	err:  59.43
+SG(x^5, λ=  0.25, m=60) mean square err:    59.43 (train) and   279.92 (test)
+SG(x^5, λ=  0.26, m=60) θ=[-241.52, 47.79, 87.89, 173.48, -7.13, 120.23]     took: 3497.19ms (4184)	err:  60.25
+SG(x^5, λ=  0.26, m=60) mean square err:    60.25 (train) and   284.29 (test)
+SG(x^5, λ=  0.27, m=60) θ=[-240.77, 48.63, 87.19, 171.47, -7.00, 120.64]     took: 3614.92ms (4261)	err:  61.06
+SG(x^5, λ=  0.27, m=60) mean square err:    61.06 (train) and   288.89 (test)
+SG(x^5, λ=  0.28, m=60) θ=[-240.00, 49.48, 86.47, 169.44, -6.87, 121.05]     took: 3698.82ms (4350)	err:  61.91
+SG(x^5, λ=  0.28, m=60) mean square err:    61.91 (train) and   293.54 (test)
+SG(x^5, λ=  0.29, m=60) θ=[-239.14, 50.36, 85.81, 167.40, -6.88, 121.34]     took: 3628.54ms (4250)	err:  62.85
+SG(x^5, λ=  0.29, m=60) mean square err:    62.85 (train) and   298.66 (test)
+SG(x^5, λ=  0.30, m=60) θ=[-238.09, 51.33, 85.31, 165.26, -7.25, 121.41]     took: 2924.69ms (3617)	err:  63.93
+SG(x^5, λ=  0.30, m=60) mean square err:    63.93 (train) and   304.13 (test)
+SG(x^5, λ=  0.31, m=60) θ=[-237.34, 52.10, 84.47, 163.44, -6.96, 121.72]     took: 3383.34ms (4170)	err:  64.86
+SG(x^5, λ=  0.31, m=60) mean square err:    64.86 (train) and   309.20 (test)
+SG(x^5, λ=  0.32, m=60) θ=[-236.43, 52.95, 83.76, 161.52, -6.95, 121.88]     took: 3494.31ms (4289)	err:  65.93
+SG(x^5, λ=  0.32, m=60) mean square err:    65.93 (train) and   314.54 (test)
+SG(x^5, λ=  0.33, m=60) θ=[-235.50, 53.78, 83.03, 159.64, -6.95, 121.97]     took: 3663.49ms (4496)	err:  67.05
+SG(x^5, λ=  0.33, m=60) mean square err:    67.05 (train) and   320.61 (test)
+SG(x^5, λ=  0.34, m=60) θ=[-234.33, 54.72, 82.51, 157.68, -7.38, 121.80]     took: 2925.11ms (3682)	err:  68.33
+SG(x^5, λ=  0.34, m=60) mean square err:    68.33 (train) and   326.71 (test)
+SG(x^5, λ=  0.35, m=60) θ=[-233.42, 55.51, 81.72, 155.90, -7.28, 121.87]     took: 3439.72ms (4221)	err:  69.52
+SG(x^5, λ=  0.35, m=60) mean square err:    69.52 (train) and   332.78 (test)
+SG(x^5, λ=  0.36, m=60) θ=[-232.33, 56.36, 81.06, 154.11, -7.48, 121.72]     took: 3384.21ms (4049)	err:  70.83
+SG(x^5, λ=  0.36, m=60) mean square err:    70.83 (train) and   339.02 (test)
+SG(x^5, λ=  0.37, m=60) θ=[-231.15, 57.22, 80.47, 152.31, -7.84, 121.42]     took: 2899.20ms (3523)	err:  72.25
+SG(x^5, λ=  0.37, m=60) mean square err:    72.25 (train) and   346.29 (test)
+SG(x^5, λ=  0.38, m=60) θ=[-230.20, 57.97, 79.65, 150.66, -7.75, 121.35]     took: 3421.29ms (4289)	err:  73.60
+SG(x^5, λ=  0.38, m=60) mean square err:    73.60 (train) and   353.30 (test)
+SG(x^5, λ=  0.39, m=60) θ=[-229.08, 58.78, 78.96, 148.99, -7.92, 121.09]     took: 3528.31ms (4327)	err:  75.05
+SG(x^5, λ=  0.39, m=60) mean square err:    75.05 (train) and   359.86 (test)
+SG(x^5, λ=  0.40, m=60) θ=[-227.95, 59.57, 78.27, 147.36, -8.11, 120.77]     took: 3520.11ms (4430)	err:  76.57
+SG(x^5, λ=  0.40, m=60) mean square err:    76.57 (train) and   367.23 (test)
+SG(x^5, λ=  0.41, m=60) θ=[-226.78, 60.36, 77.58, 145.76, -8.35, 120.39]     took: 3615.31ms (4496)	err:  78.16
+SG(x^5, λ=  0.41, m=60) mean square err:    78.16 (train) and   374.93 (test)
+SG(x^5, λ=  0.42, m=60) θ=[-225.55, 61.15, 76.94, 144.19, -8.67, 119.93]     took: 3247.43ms (3995)	err:  79.82
+SG(x^5, λ=  0.42, m=60) mean square err:    79.82 (train) and   382.18 (test)
+SG(x^5, λ=  0.43, m=60) θ=[-224.42, 61.88, 76.20, 142.68, -8.81, 119.53]     took: 3872.08ms (4641)	err:  81.49
+SG(x^5, λ=  0.43, m=60) mean square err:    81.49 (train) and   390.45 (test)
+SG(x^5, λ=  0.44, m=60) θ=[-223.21, 62.63, 75.52, 141.20, -9.08, 119.03]     took: 3599.39ms (4443)	err:  83.24
+SG(x^5, λ=  0.44, m=60) mean square err:    83.24 (train) and   398.55 (test)
+SG(x^5, λ=  0.45, m=60) θ=[-221.97, 63.38, 74.85, 139.74, -9.37, 118.48]     took: 3312.11ms (4185)	err:  85.06
+SG(x^5, λ=  0.45, m=60) mean square err:    85.06 (train) and   407.06 (test)
+SG(x^5, λ=  0.46, m=60) θ=[-220.76, 64.09, 74.14, 138.34, -9.62, 117.92]     took: 3497.00ms (4278)	err:  86.91
+SG(x^5, λ=  0.46, m=60) mean square err:    86.91 (train) and   415.66 (test)
+SG(x^5, λ=  0.47, m=60) θ=[-219.53, 64.80, 73.44, 136.95, -9.89, 117.33]     took: 3489.25ms (4301)	err:  88.83
+SG(x^5, λ=  0.47, m=60) mean square err:    88.83 (train) and   424.70 (test)
+SG(x^5, λ=  0.48, m=60) θ=[-218.30, 65.48, 72.73, 135.62, -10.13, 116.73]    took: 3666.91ms (4645)	err:  90.77
+SG(x^5, λ=  0.48, m=60) mean square err:    90.77 (train) and   433.23 (test)
+SG(x^5, λ=  0.49, m=60) θ=[-217.03, 66.17, 72.05, 134.31, -10.44, 116.06]    took: 3365.58ms (4084)	err:  92.81
+SG(x^5, λ=  0.49, m=60) mean square err:    92.81 (train) and   442.49 (test)
+SG(x^5, λ=  0.50, m=60) θ=[-215.78, 66.83, 71.34, 133.04, -10.68, 115.41]    took: 3463.60ms (4283)	err:  94.85
+SG(x^5, λ=  0.50, m=60) mean square err:    94.85 (train) and   451.09 (test)
+SG(x^5, λ=  0.51, m=60) θ=[-214.54, 67.47, 70.62, 131.79, -10.95, 114.73]    took: 3606.13ms (4301)	err:  96.98
+SG(x^5, λ=  0.51, m=60) mean square err:    96.98 (train) and   461.05 (test)
+SG(x^5, λ=  0.52, m=60) θ=[-213.28, 68.10, 69.92, 130.56, -11.21, 114.02]    took: 3561.82ms (4338)	err:  99.16
+SG(x^5, λ=  0.52, m=60) mean square err:    99.16 (train) and   470.98 (test)
+SG(x^5, λ=  0.53, m=60) θ=[-212.04, 68.72, 69.20, 129.38, -11.44, 113.32]    took: 3692.43ms (4625)	err: 101.37
+SG(x^5, λ=  0.53, m=60) mean square err:   101.37 (train) and   480.88 (test)
+SG(x^5, λ=  0.54, m=60) θ=[-210.78, 69.32, 68.49, 128.21, -11.71, 112.59]    took: 3655.49ms (4451)	err: 103.64
+SG(x^5, λ=  0.54, m=60) mean square err:   103.64 (train) and   490.90 (test)
+SG(x^5, λ=  0.55, m=60) θ=[-209.54, 69.91, 67.76, 127.08, -11.95, 111.86]    took: 3815.97ms (4640)	err: 105.95
+SG(x^5, λ=  0.55, m=60) mean square err:   105.95 (train) and   501.06 (test)
+SG(x^5, λ=  0.56, m=60) θ=[-208.29, 70.48, 67.04, 125.97, -12.19, 111.11]    took: 3921.64ms (4750)	err: 108.30
+SG(x^5, λ=  0.56, m=60) mean square err:   108.30 (train) and   511.29 (test)
+SG(x^5, λ=  0.57, m=60) θ=[-207.02, 71.05, 66.35, 124.88, -12.48, 110.31]    took: 2890.84ms (3394)	err: 110.73
+SG(x^5, λ=  0.57, m=60) mean square err:   110.73 (train) and   522.16 (test)
+SG(x^5, λ=  0.58, m=60) θ=[-205.78, 71.59, 65.61, 123.82, -12.69, 109.57]    took: 3346.11ms (3676)	err: 113.16
+SG(x^5, λ=  0.58, m=60) mean square err:   113.16 (train) and   532.33 (test)
+SG(x^5, λ=  0.59, m=60) θ=[-204.56, 72.11, 64.87, 122.78, -12.89, 108.82]    took: 3523.70ms (4234)	err: 115.65
+SG(x^5, λ=  0.59, m=60) mean square err:   115.65 (train) and   543.36 (test)
+SG(x^5, λ=  0.60, m=60) θ=[-203.34, 72.62, 64.15, 121.76, -13.10, 108.05]    took: 3443.36ms (4298)	err: 118.20
+SG(x^5, λ=  0.60, m=60) mean square err:   118.20 (train) and   554.84 (test)
+SG(x^5, λ=  0.61, m=60) θ=[-202.11, 73.13, 63.41, 120.77, -13.31, 107.29]    took: 4031.02ms (4945)	err: 120.75
+SG(x^5, λ=  0.61, m=60) mean square err:   120.75 (train) and   565.35 (test)
+SG(x^5, λ=  0.62, m=60) θ=[-200.89, 73.61, 62.69, 119.79, -13.51, 106.51]    took: 3552.58ms (4424)	err: 123.39
+SG(x^5, λ=  0.62, m=60) mean square err:   123.39 (train) and   577.19 (test)
+SG(x^5, λ=  0.63, m=60) θ=[-199.68, 74.09, 61.96, 118.83, -13.71, 105.75]    took: 3922.41ms (4810)	err: 126.02
+SG(x^5, λ=  0.63, m=60) mean square err:   126.02 (train) and   587.93 (test)
+SG(x^5, λ=  0.64, m=60) θ=[-198.47, 74.54, 61.23, 117.90, -13.89, 104.98]    took: 4056.31ms (4669)	err: 128.71
+SG(x^5, λ=  0.64, m=60) mean square err:   128.71 (train) and   599.39 (test)
+SG(x^5, λ=  0.65, m=60) θ=[-197.27, 74.99, 60.51, 116.98, -14.09, 104.21]    took: 3096.06ms (3699)	err: 131.43
+SG(x^5, λ=  0.65, m=60) mean square err:   131.43 (train) and   610.96 (test)
+SG(x^5, λ=  0.66, m=60) θ=[-196.08, 75.42, 59.77, 116.07, -14.26, 103.45]    took: 3649.91ms (4561)	err: 134.20
+SG(x^5, λ=  0.66, m=60) mean square err:   134.20 (train) and   622.81 (test)
+SG(x^5, λ=  0.67, m=60) θ=[-194.90, 75.84, 59.04, 115.19, -14.42, 102.69]    took: 3757.87ms (4641)	err: 137.01
+SG(x^5, λ=  0.67, m=60) mean square err:   137.01 (train) and   634.69 (test)
+SG(x^5, λ=  0.68, m=60) θ=[-193.73, 76.24, 58.32, 114.33, -14.60, 101.93]    took: 2909.82ms (3578)	err: 139.82
+SG(x^5, λ=  0.68, m=60) mean square err:   139.82 (train) and   646.68 (test)
+SG(x^5, λ=  0.69, m=60) θ=[-192.56, 76.64, 57.60, 113.47, -14.74, 101.19]    took: 3500.67ms (4205)	err: 142.68
+SG(x^5, λ=  0.69, m=60) mean square err:   142.68 (train) and   658.30 (test)
+SG(x^5, λ=  0.70, m=60) θ=[-191.41, 77.01, 56.87, 112.63, -14.90, 100.43]    took: 3326.63ms (4055)	err: 145.60
+SG(x^5, λ=  0.70, m=60) mean square err:   145.60 (train) and   671.12 (test)
+SG(x^5, λ=  0.71, m=60) θ=[-190.26, 77.38, 56.15, 111.81, -15.04, 99.70]     took: 3879.95ms (4696)	err: 148.53
+SG(x^5, λ=  0.71, m=60) mean square err:   148.53 (train) and   683.36 (test)
+SG(x^5, λ=  0.72, m=60) θ=[-189.12, 77.73, 55.43, 111.00, -15.18, 98.96]     took: 3767.83ms (4390)	err: 151.49
+SG(x^5, λ=  0.72, m=60) mean square err:   151.49 (train) and   695.88 (test)
+SG(x^5, λ=  0.73, m=60) θ=[-187.99, 78.07, 54.71, 110.21, -15.31, 98.23]     took: 3493.60ms (4023)	err: 154.48
+SG(x^5, λ=  0.73, m=60) mean square err:   154.48 (train) and   708.42 (test)
+SG(x^5, λ=  0.74, m=60) θ=[-186.86, 78.40, 54.00, 109.43, -15.44, 97.51]     took: 4082.85ms (5000)	err: 157.48
+SG(x^5, λ=  0.74, m=60) mean square err:   157.48 (train) and   720.46 (test)
+SG(x^5, λ=  0.75, m=60) θ=[-185.76, 78.71, 53.29, 108.66, -15.56, 96.79]     took: 3460.60ms (4338)	err: 160.54
+SG(x^5, λ=  0.75, m=60) mean square err:   160.54 (train) and   733.73 (test)
+SG(x^5, λ=  0.76, m=60) θ=[-184.66, 79.02, 52.58, 107.91, -15.68, 96.08]     took: 3428.55ms (4058)	err: 163.60
+SG(x^5, λ=  0.76, m=60) mean square err:   163.60 (train) and   746.41 (test)
+SG(x^5, λ=  0.77, m=60) θ=[-183.56, 79.31, 51.88, 107.16, -15.80, 95.37]     took: 3559.05ms (4381)	err: 166.71
+SG(x^5, λ=  0.77, m=60) mean square err:   166.71 (train) and   759.43 (test)
+SG(x^5, λ=  0.78, m=60) θ=[-182.48, 79.59, 51.18, 106.43, -15.91, 94.68]     took: 3621.55ms (4453)	err: 169.83
+SG(x^5, λ=  0.78, m=60) mean square err:   169.83 (train) and   772.54 (test)
+SG(x^5, λ=  0.79, m=60) θ=[-181.40, 79.86, 50.48, 105.72, -16.02, 93.99]     took: 3352.86ms (4111)	err: 172.98
+SG(x^5, λ=  0.79, m=60) mean square err:   172.98 (train) and   785.68 (test)
+SG(x^5, λ=  0.80, m=60) θ=[-180.33, 80.12, 49.79, 105.01, -16.12, 93.31]     took: 3663.58ms (4382)	err: 176.16
+SG(x^5, λ=  0.80, m=60) mean square err:   176.16 (train) and   798.88 (test)
+SG(x^5, λ=  0.81, m=60) θ=[-179.28, 80.36, 49.10, 104.31, -16.22, 92.63]     took: 4340.41ms (4984)	err: 179.36
+SG(x^5, λ=  0.81, m=60) mean square err:   179.36 (train) and   812.18 (test)
+SG(x^5, λ=  0.82, m=60) θ=[-178.23, 80.60, 48.42, 103.62, -16.32, 91.96]     took: 4026.58ms (4960)	err: 182.58
+SG(x^5, λ=  0.82, m=60) mean square err:   182.58 (train) and   825.65 (test)
+SG(x^5, λ=  0.83, m=60) θ=[-177.19, 80.83, 47.74, 102.95, -16.41, 91.30]     took: 3929.23ms (4907)	err: 185.81
+SG(x^5, λ=  0.83, m=60) mean square err:   185.81 (train) and   838.92 (test)
+SG(x^5, λ=  0.84, m=60) θ=[-176.16, 81.04, 47.07, 102.29, -16.50, 90.65]     took: 3837.60ms (4817)	err: 189.06
+SG(x^5, λ=  0.84, m=60) mean square err:   189.06 (train) and   852.18 (test)
+SG(x^5, λ=  0.85, m=60) θ=[-175.14, 81.25, 46.40, 101.63, -16.59, 90.00]     took: 3458.94ms (4388)	err: 192.36
+SG(x^5, λ=  0.85, m=60) mean square err:   192.36 (train) and   866.22 (test)
+SG(x^5, λ=  0.86, m=60) θ=[-174.13, 81.44, 45.74, 100.99, -16.67, 89.37]     took: 3584.38ms (4494)	err: 195.68
+SG(x^5, λ=  0.86, m=60) mean square err:   195.68 (train) and   880.23 (test)
+SG(x^5, λ=  0.87, m=60) θ=[-173.12, 81.63, 45.08, 100.35, -16.76, 88.74]     took: 3898.20ms (4849)	err: 199.00
+SG(x^5, λ=  0.87, m=60) mean square err:   199.00 (train) and   893.98 (test)
+SG(x^5, λ=  0.88, m=60) θ=[-172.13, 81.80, 44.42, 99.73, -16.84, 88.11]      took: 3688.96ms (4605)	err: 202.35
+SG(x^5, λ=  0.88, m=60) mean square err:   202.35 (train) and   907.94 (test)
+SG(x^5, λ=  0.89, m=60) θ=[-171.14, 81.97, 43.78, 99.11, -16.92, 87.50]      took: 3237.08ms (4024)	err: 205.70
+SG(x^5, λ=  0.89, m=60) mean square err:   205.70 (train) and   921.67 (test)
+SG(x^5, λ=  0.90, m=60) θ=[-170.16, 82.13, 43.13, 98.50, -16.99, 86.89]      took: 3800.69ms (4772)	err: 209.07
+SG(x^5, λ=  0.90, m=60) mean square err:   209.07 (train) and   935.34 (test)
+SG(x^5, λ=  0.91, m=60) θ=[-169.19, 82.28, 42.50, 97.90, -17.07, 86.29]      took: 3546.28ms (4422)	err: 212.49
+SG(x^5, λ=  0.91, m=60) mean square err:   212.49 (train) and   949.83 (test)
+SG(x^5, λ=  0.92, m=60) θ=[-168.23, 82.41, 41.86, 97.31, -17.14, 85.69]      took: 3703.80ms (4569)	err: 215.92
+SG(x^5, λ=  0.92, m=60) mean square err:   215.92 (train) and   964.17 (test)
+SG(x^5, λ=  0.93, m=60) θ=[-167.28, 82.55, 41.24, 96.73, -17.21, 85.11]      took: 4333.97ms (4815)	err: 219.37
+SG(x^5, λ=  0.93, m=60) mean square err:   219.37 (train) and   978.51 (test)
+SG(x^5, λ=  0.94, m=60) θ=[-166.33, 82.67, 40.62, 96.16, -17.28, 84.53]      took: 3914.28ms (4544)	err: 222.80
+SG(x^5, λ=  0.94, m=60) mean square err:   222.80 (train) and   992.39 (test)
+SG(x^5, λ=  0.95, m=60) θ=[-165.40, 82.78, 40.00, 95.59, -17.35, 83.96]      took: 3922.39ms (4878)	err: 226.30
+SG(x^5, λ=  0.95, m=60) mean square err:   226.30 (train) and  1007.18 (test)
+SG(x^5, λ=  0.96, m=60) θ=[-164.47, 82.89, 39.39, 95.03, -17.42, 83.39]      took: 3633.84ms (4018)	err: 229.77
+SG(x^5, λ=  0.96, m=60) mean square err:   229.77 (train) and  1021.55 (test)
+SG(x^5, λ=  0.97, m=60) θ=[-163.55, 82.98, 38.78, 94.47, -17.48, 82.83]      took: 3837.55ms (4819)	err: 233.30
+SG(x^5, λ=  0.97, m=60) mean square err:   233.30 (train) and  1036.27 (test)
+SG(x^5, λ=  0.98, m=60) θ=[-162.63, 83.07, 38.18, 93.93, -17.55, 82.28]      took: 4177.86ms (4881)	err: 236.83
+SG(x^5, λ=  0.98, m=60) mean square err:   236.83 (train) and  1050.91 (test)
+SG(x^5, λ=  0.99, m=60) θ=[-161.73, 83.15, 37.59, 93.39, -17.61, 81.74]      took: 3512.99ms (4381)	err: 240.34
+SG(x^5, λ=  0.99, m=60) mean square err:   240.34 (train) and  1065.29 (test)
