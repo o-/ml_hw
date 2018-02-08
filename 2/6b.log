@@ -1,0 +1,58 @@
+
+* closed form solution θ for n=2,3,5
+CF(x^2)          θ=[ 9.49,  4.79,  1.53]                              took:    0.65ms (0)	err:  24.74
+CF(x^3)          θ=[10.01,  0.20,  1.47,  0.47]                       took:    0.17ms (0)	err:   3.97
+CF(x^5)          θ=[ 9.85,  0.20,  1.58,  0.48, -0.01, -0.00]         took:    0.22ms (0)	err:   3.95
+
+* mean square errors for closed form solutions
+CF(x^2)          mean square err:    24.74 (train) and  4413.59 (test)
+CF(x^3)          mean square err:     3.97 (train) and    53.83 (test)
+CF(x^5)          mean square err:     3.95 (train) and    41.51 (test)
+
+* sgd solution θ for n=2
+SG(x^2, m=60)    θ=[ 8.08,  4.80,  1.65]                              took:   36.90ms (60)	err:  25.64
+SG(x^2, m=60)    mean square err:    25.64 (train) and  4641.26 (test)
+
+* sgd solution θ for n=3
+SG(x^3, m=60)    θ=[10.00,  0.21,  1.48,  0.47]                       took: 1945.02ms (2746)	err:   3.97
+
+
+--= normalizing input values makes regression much more stable! =--
+                from now on normalize to [0..1]
+
+* closed form solution θ and mean square error for n=2,3,5
+CF(x^2)          θ=[-9.43, 37.80, 23.87]                              took:    0.78ms (0)	err:  24.74
+CF(x^3)          θ=[-19.99,  1.61, 23.01, 58.06]                      took:    0.20ms (0)	err:   3.97
+CF(x^5)          θ=[-20.10,  1.61, 24.60, 58.30, -1.81, -0.34]        took:    0.25ms (0)	err:   3.95
+
+* sgd solution θ and mean square error for n=2,3,5
+SG(x^2, m=60)    θ=[-9.43, 37.80, 23.87]                              took: 2162.72ms (3459)	err:  24.74
+SG(x^2, m=60)    mean square err:    24.74 (train) and  4413.57 (test)
+SG(x^3, m=60)    θ=[-19.92,  1.90, 23.02, 57.61]                      took: 1419.27ms (2084)	err:   3.97
+SG(x^3, m=60)    mean square err:     3.97 (train) and    57.88 (test)
+SG(x^5, m=60)    θ=[-21.30,  7.93, 24.72, 31.55, -1.67, 22.23]        took: 2479.89ms (2880)	err:   4.15
+SG(x^5, m=60)    mean square err:     4.15 (train) and  4532.84 (test)
+
+
+--= error for n=5 is horrible, because the train set does not cover x < -4 =--
+            let's look at the data
+
+--= larger minibatches gives us faster execution time =--
+        no effect on error rate or convergence rate
+
+SG(x^5, m= 1)    θ=[-20.23, 10.85, 19.72, 25.97,  3.83, 23.85]        took: 1999.15ms (1000)	err:   4.55
+SG(x^5, m= 1)    mean square err:     4.55 (train) and  2588.76 (test)
+SG(x^5, m= 2)    θ=[-20.23, 10.85, 19.73, 25.98,  3.83, 23.84]        took: 1437.59ms (1000)	err:   4.55
+SG(x^5, m= 2)    mean square err:     4.55 (train) and  2587.28 (test)
+SG(x^5, m= 5)    θ=[-20.23, 10.84, 19.69, 25.98,  3.86, 23.85]        took: 1084.29ms (1000)	err:   4.55
+SG(x^5, m= 5)    mean square err:     4.55 (train) and  2581.27 (test)
+SG(x^5, m=10)    θ=[-20.24, 10.84, 19.72, 25.98,  3.84, 23.85]        took: 1040.31ms (1000)	err:   4.55
+SG(x^5, m=10)    mean square err:     4.55 (train) and  2591.05 (test)
+SG(x^5, m=20)    θ=[-20.23, 10.84, 19.70, 25.98,  3.86, 23.85]        took:  922.14ms (1000)	err:   4.55
+SG(x^5, m=20)    mean square err:     4.55 (train) and  2584.16 (test)
+SG(x^5, m=30)    θ=[-20.23, 10.85, 19.74, 25.99,  3.81, 23.81]        took:  914.90ms (1000)	err:   4.54
+SG(x^5, m=30)    mean square err:     4.54 (train) and  2584.37 (test)
+SG(x^5, m=60)    θ=[-20.23, 10.86, 19.71, 25.97,  3.85, 23.83]        took:  867.20ms (1000)	err:   4.55
+SG(x^5, m=60)    mean square err:     4.55 (train) and  2577.53 (test)
+SG(x^5, m=90)    θ=[-20.24, 10.82, 19.72, 26.00,  3.84, 23.86]        took:  838.25ms (1000)	err:   4.54
+SG(x^5, m=90)    mean square err:     4.54 (train) and  2597.11 (test)

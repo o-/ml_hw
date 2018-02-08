@@ -121,14 +121,14 @@ class SG:
             err = error(pred, target)
             # update ttup, which is our accumulator for the current batch
             for i in range(len(ttup)):
-                ttup[i] += 2*x[i]*rate*err
+                ttup[i] += 2.0*x[i]*rate*err
             return err*err
 
         def update(tt, ttup, rate):
             # this function applies the accumulated step in ttup to tt
             if self.ridge != 0:
                 # apply the regularization term
-                penalize = [2* self.ridge * rate * t for t in tt]
+                penalize = [2.0* self.ridge * rate * t for t in tt]
                 penalize[0] = 0.0
                 ttup = np.add(ttup, penalize)
             stepsize = np.sqrt(np.sum(np.multiply(ttup, ttup)))
@@ -294,7 +294,7 @@ def main():
         gd_precision   = 0.00001   if args.gd_precision  is None else args.gd_precision
         gd_rate_decay  = 0.9999    if args.gd_rate_decay is None else args.gd_rate_decay
     else:
-        gd_init_rate   = 0.01     if args.gd_init_rate  is None else args.gd_init_rate
+        gd_init_rate   = 0.005     if args.gd_init_rate  is None else args.gd_init_rate
         gd_rate_decay  = 0.999     if args.gd_rate_decay is None else args.gd_rate_decay
         gd_precision   = 0.001     if args.gd_precision  is None else args.gd_precision
 
