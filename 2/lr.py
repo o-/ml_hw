@@ -428,7 +428,7 @@ def main():
                         name = "SG(x^%d, m=%2d)" %(p, batch)
                         log("Running stochastic gradient with a poly(%d) model, batch size %d (%s)" % (p, batch, l))
                     else:
-                        name = "SG(x^%d, λ=%5.1f, m=%2d)" %(p, l, batch)
+                        name = "SG(x^%d, λ=%6.2f, m=%2d)" %(p, l, batch)
                         log("Running stochastic gradient with a poly(%d) model, batch size %d and ridge factor %.2f (%s)" % (p, batch, l, name))
 
                     sg = SG(batch, l, gd_init_rate, gd_rate_decay, gd_precision, args.gd_limit, not args.no_randomize)
@@ -441,7 +441,7 @@ def main():
                     name = "CF(x^%d)" % p
                     log("Computing closed form solution for poly(%d) model (%s)" % (p, name))
                 else:
-                    name = "CF(x^%d, λ=%5.1f)" % (p, l)
+                    name = "CF(x^%d, λ=%6.2f)" % (p, l)
                     log("Computing closed form solution for poly(%d) model and ridge factor %.2f (%s)" % (p, l, name))
                 cf = ClosedFormSolution(p+1, l)
                 todo.append([name, p, cf])
