@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\bibliographystyle{apalike}
+
+\title{Benchmark Classification for GC Tuning}
+
+\author{Olivier Flückiger}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\abstract
+
+For evaluating the performance of a garbage collector (GC) a balanced set of benchmarks is key.
+To provide meaningful guidance, we must understand what kind of workload a certain benchmark simulates.
+Since tuning parameters heavily influence GC performance, we need to be careful, to evaluate each kind of workload in isolation.
+We propose to develop a methodology for automatically clustering benchmarks by their interaction with GC tuning.
+
+\section{Introduction}
+
+A typical GC implementation has several tuneable parameters, such as heap grow rate, various thresholds for triggering collection cycles, and so on.
+Picking an optimal set of parameters is a multi-dimensional optimization problem, and the resulting default parameters are always a compromise.
+
+To better understand GC tuning, we propose to develop a methodology for classifying benchmarks according to their behavior under varying GC parameters.
+This allows us to produce a reduced benchmark suite, which yields a reasonable approximation of the full suite, under varying GC parameters.
+The intuition is, that many benchmarks will have similar allocation behavior.
+Including more than one benchmark of the same kind is redundant, when we are concerned with stressing the GC.
+
+There are several applications of such a classification.
+For efficient testing, we want to know the minimally required classes of benchmarks.
+For a fair and unbiased comparison, we want to ensure, that we covered all facets of a GC algorithm.
+Also, we can provide more insightful evaluations, if we report performance numbers for each class.
+Finally, if we know which classes of programs exist, we can detect them and adjust tuning parameters at runtime, overcoming the one size fits all nature of ahead-of-time GC tuning.
+
+\section{Project Proposal}
+
+For this project we will focus on one specific instance.
+We will use a standard R benchmark suite called \emph{rbench}\footnote{https://github.com/rbenchmark/benchmarks} and execute the contained benchmarks with the latest version of the reference R bytecode interpreter~\cite{r}. 
+As a preparatory step we identify and expose all external and internal tuning parameters of the R GC.
+
+For data collection we we execute each benchmark in the suite for a broad selection of tuning parameters.
+For each run we keep track of execution time and maximum working set size (WSS).
+We say that a run is optimal if it is within $n\%$ (for a yet to be determined $n$) of the best run and sub-optimal otherwise.
+This classification allows us to terminate processes early, if they exceed the current threshold for sub-optimality, and allows for fast data collection.
+This will generate a table with the following columns, where $P_n$ denotes the $n$-th tuning parameter, and Time and WSS can be $\infty$ for aborted runs.
+
+\bigskip
+\begin{tabular}{l l l l l l l}
+  Program, & $P_1$, & $P_2$, & \dots, & $P_n$, & Time, & WSS \\
+\end{tabular}
+\bigskip
+
+\noindent From those results our aim is to identify classes of similarly behaved programs.
+For example, if all runs are classified optimal, the program does not depend on the GC parameters at all.
+
+We expect the optimal runs to form a mostly closed region around the best run.
+But GC's are highly complex, so we expect outliers and noise, or even completely separate islands of optimality.
+Hence, we will use a support vector machine (SVM) with a rbf kernel as a model to carve out the areas of optimal parameters.
+Finally, we use k-means (or a similar algorithm) to cluster programs with similar SVM models.
+
+To evaluate the results we study a recent GC parameter tuning in the official R interpreter.
+SVN commit 67660\footnote{https://github.com/wch/r-source/commit/15712025cae094879f92d6999ec9d7ee76ccddbf} introduces a GC tuning,
+with the following commit message: \emph{``Increased R\_NGrowIncrFrac and R\_VGrowIncrFrac to 0.2 to reduce GC frequency when the heap needs to grow''}.
+If our hypothesis holds, the median speedup of this commit on the full \emph{rbench} must be similar to the median speedup for the reduced suite. 
+
+\section{Status}
+
+So far we have assessed the status of the \emph{rbench} benchmark suite.
+We have discovered and fixed several issues.
+Also, we have adjusted the running times of the individual benchmarks to more reasonable defaults.
+
+Then, we have run the \emph{rbench} suite against R interpreters built from svn commits 67659 and 67660 (the commits before and after the GC tuning mentioned above).
+We have verified that we the tuning is visible in the benchmark results.
+The change speeds up roughly 10\% of the benchmarks by 5-25\% (50\% in one case), while using 10-40\% more RAM in about 20\% of them. 
+
+\section{Related Work}
+
+Various authors document efforts to specialize GC parameters to the workload.
+There are approaches trying to optimize parameters for average performance~\cite{Brecht06}, for application specific performance~\cite{Lengauer14,Singer07}, as well as on-line methods, for tuning at runtime~\cite{Cheng98,singer01}.
+
+\clearpage
+
+\bibliography{project-R-gc}
+
+\end{document}
