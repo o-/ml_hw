@@ -1,0 +1,5 @@
+3.51440205752 [ 7.45795584  0.05800465]
+
+../data/data2.mat: θ=[ 7.45795584  0.05800465]	took:   39.25ms
+Confusion matrix for training data:  [[60, 2], [3, 61]]
+Confusion matrix for training data:  [[7, 0], [0, 7]]
