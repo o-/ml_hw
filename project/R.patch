@@ -1,0 +1,74 @@
+diff --git a/src/main/memory.c b/src/main/memory.c
+index a2b66785ea..acfa6c1c01 100644
+--- a/src/main/memory.c
++++ b/src/main/memory.c
+@@ -287,14 +287,12 @@ static int collect_counts_max[] = { LEVEL_0_FREQ, LEVEL_1_FREQ };
+    This constant is also used in heap size adjustment as a minimal
+    fraction of the minimal heap size levels that should be available
+    for allocation. */
+-static double R_MinFreeFrac = 0.2;
+ 
+ /* When pages are released, a number of free nodes equal to
+    R_MaxKeepFrac times the number of allocated nodes for each class is
+    retained.  Pages not needed to meet this requirement are released.
+    An attempt to release pages is made every R_PageReleaseFreq level 1
+    or level 2 collections. */
+-static double R_MaxKeepFrac = 0.5;
+ static int R_PageReleaseFreq = 1;
+ 
+ /* The heap size constants R_NSize and R_VSize are used for triggering
+@@ -321,31 +319,36 @@ static int R_PageReleaseFreq = 1;
+ 
+    Some of the settings can now be adjusted by environment variables.
+ */
+-static double R_NGrowFrac = 0.70;
+-static double R_NShrinkFrac = 0.30;
+-
+-static double R_VGrowFrac = 0.70;
+-static double R_VShrinkFrac = 0.30;
+-
+-#ifdef SMALL_MEMORY
+-/* On machines with only 32M of memory (or on a classic Mac OS port)
+-   it might be a good idea to use settings like these that are more
+-   aggressive at keeping memory usage down. */
+-static double R_NGrowIncrFrac = 0.0, R_NShrinkIncrFrac = 0.2;
+-static int R_NGrowIncrMin = 50000, R_NShrinkIncrMin = 0;
+-static double R_VGrowIncrFrac = 0.0, R_VShrinkIncrFrac = 0.2;
+-static int R_VGrowIncrMin = 100000, R_VShrinkIncrMin = 0;
+-#else
+-static double R_NGrowIncrFrac = 0.2, R_NShrinkIncrFrac = 0.2;
++static double R_MinFreeFrac;
++static double R_MaxKeepFrac;
++static double R_NGrowFrac;
++static double R_NShrinkFrac;
++static double R_VGrowFrac;
++static double R_VShrinkFrac;
++static double R_NGrowIncrFrac;
++static double R_NShrinkIncrFrac;
++static double R_VGrowIncrFrac;
++static double R_VShrinkIncrFrac;
++
+ static int R_NGrowIncrMin = 40000, R_NShrinkIncrMin = 0;
+-static double R_VGrowIncrFrac = 0.2, R_VShrinkIncrFrac = 0.2;
+ static int R_VGrowIncrMin = 80000, R_VShrinkIncrMin = 0;
+-#endif
+ 
+ static void init_gc_grow_settings()
+ {
+     char *arg;
+ 
++R_MinFreeFrac = atof(getenv("R_MinFreeFrac"));
++R_MaxKeepFrac = atof(getenv("R_MaxKeepFrac"));
++R_NGrowFrac = atof(getenv("R_NGrowFrac"));
++R_NShrinkFrac = atof(getenv("R_NShrinkFrac"));
++R_VGrowFrac = atof(getenv("R_VGrowFrac"));
++R_VShrinkFrac = atof(getenv("R_VShrinkFrac"));
++R_NGrowIncrFrac = atof(getenv("R_NGrowIncrFrac"));
++R_NShrinkIncrFrac = atof(getenv("R_NShrinkIncrFrac"));
++R_VGrowIncrFrac = atof(getenv("R_VGrowIncrFrac"));
++R_VShrinkIncrFrac = atof(getenv("R_VShrinkIncrFrac"));
++
++
+     arg = getenv("R_GC_MEM_GROW");
+     if (arg != NULL) {
+ 	int which = (int) atof(arg);
