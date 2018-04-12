@@ -18,15 +18,24 @@ import os
 import matplotlib
 import matplotlib.pyplot as plt
 import math
+import sklearn.datasets
 
 mat = scipy.io.loadmat("dataset.mat")
+
+np.random.seed(12345)
 
 train_x = mat['X_train']
 train_y = mat['Y_train']
 test_x = mat['X_test']
 test_y = mat['Y_test']
 
-np.random.seed(12345)
+# X, y = sklearn.datasets.make_moons(200, noise=0.20)
+# train_x = [X[:,0], X[:,1]]
+# train_y = [y]
+# test_x = None
+# test_y = None
+
+
 class NN:
     def __init__(self, S, activations):
         if isinstance(activations, str):
@@ -115,42 +124,81 @@ class NN:
 
         return (dW, db)
 
-    def print_errs(self, i, iters, xs1, xs2, ys, test_x, test_y):
-        res = np.array(  \
-                [self.forward([x1,x2])[1][-1][0]  \
-                    for x1,x2 in zip(xs1, xs2)])
+    def predict(self, x1, x2):
+        return self.forward([x1,x2])[1][-1][0]
+
+    def predict_class(self, x1, x2):
+        return self.predict(x1, x2) > 0.5
+
+    def print_errs(self, i, iters, xs1, xs2, ys, test_x, test_y, wdiff):
+        res = np.array([self.predict(x1,x2) for x1,x2 in zip(xs1, xs2)])
         err = np.sum(np.dot(res-ys, res-ys))
         miss = 0
         for a, y in zip(res, ys):
             if (y == 0 and a > 0.5) or (y == 1 and a <= 0.5):
                 miss += 1
         if not test_x is None:
-            tres = np.array(  \
-                    [self.forward([x1,x2])[1][-1][0]  \
-                        for x1,x2 in zip(test_x[0], test_x[1])])
+            tres = np.array([self.predict(x1,x2) \
+                    for x1,x2 in zip(test_x[0], test_x[1])])
             terr = np.sum(np.dot(tres-test_y[0], tres-test_y[0]))
             tmiss = 0
             for a, y in zip(tres, test_y[0]):
                 if (y == 0 and a > 0.5) or (y == 1 and a <= 0.5):
                     tmiss += 1
+        else:
+            terr = 0
+            tmiss = 0
 
-        print("%d / %d : %f (%d), %f (%d)" % \
-                (i, iters, err, miss, terr, tmiss))
-        return miss+tmiss
+        print("%d / %d [%f] : %f (%d), %f (%d)" % \
+                (i, iters, wdiff, err, miss, terr, tmiss))
 
+    def plot(self, xs, ys, test_x, test_y, block=True):
+        res = [self.predict_class(x1, x2) for x1,x2 in zip(train_x[0], train_x[1])]
+        if not test_x is None:
+            tres = [self.predict_class(x1,x2) for x1,x2 in zip(test_x[0], test_x[1])]
+        if block:
+            grid = 0.01
+        else:
+            grid = 0.2
+        xmin1 = min([10e100 if test_x is None else test_x[0].min() - .5, train_x[0].min() - .5])
+        xmin2 = min([10e100 if test_x is None else test_x[1].min() - .5, train_x[1].min() - .5])
+        xmax1 = max([-10e100 if test_x is None else test_x[0].max() + .5, train_x[0].max() + .5])
+        xmax2 = max([-10e100 if test_x is None else test_x[1].max() + .5, train_x[1].max() + .5])
+        gx1, gx2 = np.meshgrid(np.arange(xmin1, xmax1, grid), np.arange(xmin2, xmax2, grid))
+        cl = np.array([self.predict_class(x1,x2) for x1,x2 in np.c_[gx1.ravel(), gx2.ravel()]])
+        cl = cl.reshape(gx1.shape)
+        plt.contourf(gx1, gx2, cl, cmap=plt.cm.Spectral)
+        plt.scatter(train_x[0], train_x[1], \
+                c=['orange' if y else 'green' for y in train_y[0]])
+        if not test_x is None:
+            plt.scatter(test_x[0], test_x[1], \
+                    c=['yellow' if y else 'blue' for y in test_y[0]])
+        if block:
+            miss1 = []
+            miss2 = []
+            for x1, x2, a, y in zip(train_x[0], train_x[1], res, train_y[0]):
+                if (y == 0 and a) or (y == 1 and not a):
+                    miss1.append(x1)
+                    miss2.append(x2)
+            if not test_x is None:
+                for x1, x2, a, y in zip(test_x[0], test_x[1], tres, test_y[0]):
+                    if (y == 0 and a) or (y == 1 and not a):
+                        miss1.append(x1)
+                        miss2.append(x2)
+            plt.scatter(miss1, miss2, s=80, facecolors='none', edgecolors='r')
 
-    def gd(self, xs, ys, test_x, test_y, ld = 0.5, alpha = 0.5, iters = 2000) :
+            plt.show()
+        else:
+            plt.pause(0.001)
+
+    def gd(self, xs, ys, test_x=None, test_y=None, ld = 0.4, alpha = 0.4, iters = 10000, plot=False) :
+        print("SG with ld=%f, alpa=%f" %(ld, alpha))
         N = len(ys[0])
         xs1 = xs[0]
         xs2 = xs[1]
         ys = ys[0]
+        stuck = 0
         for i in range(iters):
-            if i % 100 == 0:
-                miss = self.print_errs(i, iters, xs1, xs2, ys, \
-                        test_x, test_y)
-                if miss == 0:
-                    return
-
             dW, db = self.backward([xs1[0],xs2[0]], ys[0])
             for x1,x2,y in zip(xs1[1:], xs2[1:], ys[1:]):
                 ddW, ddb = self.backward([x1,x2], y)
@@ -158,18 +206,35 @@ class NN:
                 db = [db+ddb for db,ddb in zip(db, ddb)]
 
             wdiff = 0
-            for i in range(0, len(self.S)-1):
-                self.W[i] -= (alpha/N) * (ld * self.W[i] + dW[i])
-                self.b[i] -= (alpha/N) * db[i]
-                wdiff += np.sum(np.abs(dW[i]))
-                wdiff += np.sum(np.abs(db[i]))
-        self.print_errs(iters, iters, xs1, xs2, ys, test_x, test_y)
+            for j in range(0, len(self.S)-1):
+                self.W[j] -= (alpha/N) * (ld * self.W[j] + dW[j])
+                self.b[j] -= (alpha/N) * db[j]
+                wdiff += np.dot(dW[j].transpose(), dW[j])
+                wdiff += np.dot(db[j].transpose(), db[j])
+
+            if i % 100 == 0:
+                if plot:
+                    self.plot(xs, ys, test_x, test_y, block=False)
+                self.print_errs(i, iters, xs1, xs2, ys, test_x, test_y, wdiff)
+            if wdiff < np.sum(self.S)*3:
+                stuck += 1
+                if stuck > N*4:
+                    break
+            elif stuck > 0:
+                stuck -= 1
+        self.print_errs(i, iters, xs1, xs2, ys, test_x, test_y, 0)
 
 #import cProfile
 #cProfile.run('nn.gd(train_x, train_y, iters=200, test_x=test_x, test_y=test_y)')
 
+assert(len(sys.argv)>2)
 
-nn = NN([2,10,1], ['tanh', 'tanh', 'sigm'])
+S = [int(float(s)) for s in str.split(sys.argv[1],',')]
+a = str.split(sys.argv[2],",")
+if len(a) == 1:
+    a = a[0]
+
+nn = NN(S, a)
 #nn = NN([2,10,1], 'sigm')
 #nn = NN([2,5,2,1], 'tanh')
 #nn = NN([2,10,1], 'relu')
@@ -179,7 +244,12 @@ nn = NN([2,10,1], ['tanh', 'tanh', 'sigm'])
 #    nn.clear()
 #    nn.gd(train_x, train_y, ld=ld, iters=2000, test_x=test_x, test_y=test_y)
 
-nn.gd(train_x, train_y, test_x, test_y)
+if len(sys.argv)>4:
+    nn.gd(train_x, train_y, test_x, test_y, alpha=float(sys.argv[3]), ld=float(sys.argv[4]), plot=True)
+elif len(sys.argv)>3:
+    nn.gd(train_x, train_y, test_x, test_y, alpha=float(sys.argv[3]), plot=True)
+else:
+    nn.gd(train_x, train_y, test_x, test_y, plot=True)
 
 s = 0
 for W, b in zip (nn.W, nn.b):
@@ -189,25 +259,4 @@ for W, b in zip (nn.W, nn.b):
     print("b%d" %s)
     print(b)
 
-res = [nn.forward([x1,x2])[1][-1][0] for x1,x2 in zip(train_x[0], train_x[1])]
-tres = [nn.forward([x1,x2])[1][-1][0] for x1,x2 in zip(test_x[0], test_x[1])]
-
-plt.scatter(train_x[0], train_x[1], \
-        c=['orange' if y>0.5 else 'green' for y in res])
-plt.scatter(test_x[0], test_x[1], \
-        c=['yellow' if y>0.5 else 'blue' for y in tres])
-
-miss1 = []
-miss2 = []
-for x1, x2, a, y in zip(train_x[0], train_x[1], res, train_y[0]):
-    if (y == 0 and a > 0.5) or (y == 1 and a <= 0.5):
-        miss1.append(x1)
-        miss2.append(x2)
-for x1, x2, a, y in zip(test_x[0], test_x[1], tres, test_y[0]):
-    if (y == 0 and a > 0.5) or (y == 1 and a <= 0.5):
-        miss1.append(x1)
-        miss2.append(x2)
-
-plt.scatter(miss1, miss2, s=80, facecolors='none', edgecolors='r')
-
-plt.show()
+nn.plot(train_x, train_y, test_x, test_y)
